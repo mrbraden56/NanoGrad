@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a>
-    <img src="/home/braden/Work/patrick_grad/img/patrick.jpg" alt="Logo" width="80" height="80">
+    <img src="../img/patrick.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <p align="center">
