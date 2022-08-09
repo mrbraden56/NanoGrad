@@ -12,7 +12,7 @@
   </a>
 
   <p align="center">
-    Patrick Grad  
+    Patrick Grad   
     <br />
   </p>
 </p>
