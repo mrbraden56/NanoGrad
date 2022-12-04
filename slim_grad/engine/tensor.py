@@ -68,33 +68,5 @@ class Tensor:
     # 3. Use optimizer.step to change the weights(gradient descent)
     #     - x+=stepSize*x.grad  
 
-class Neuron:
-    def __init__(self, nin) -> None:
-        self.w=[Tensor(random.uniform(-1, 1)) for _ in range(nin)]
-        self.b=Tensor(random.uniform(-1,1))
-
-    # n=Neuron(2)
-    # n(x)
-    def __call__(self, x):
-        act = sum((wi*xi for wi,xi in zip(self.w, x)), self.b)
-        out=act.tanh()
-        return out
-
-class Layer:
-    def __init__(self, nin, nout) -> None:
-        self.neurons = [Neuron(nin) for _ in range(nout)]
-
-    def __call__(self, x):
-        outs=[n(x) for n in self.neurons]
-        return outs
-
-#TODO: Understand derivates for each operator
-def main():
-    x=[2.0, 3.0]
-    n=Neuron(2)
-    print(n(x))
-
-
-if __name__ == '__main__':
-    main()
+    #TODO: Make everything in terms of numpy and not python lists
 
