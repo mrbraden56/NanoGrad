@@ -10,6 +10,9 @@ import math
 # __bar: name mangling
 class Tensor:
     def __init__(self, data, _children=(), _op='', label=''):
+        # if isinstance(data, (int, float)): self.data = data
+        # if isinstance(data, np.ndarray): self.data = data
+        # if isinstance(data, list): self.data = np.array(data)
         self.data=data
         self.grad=0.0
         self._backward=lambda: None
@@ -38,9 +41,32 @@ class Tensor:
         out._backward=_backward
         return out
 
+    @classmethod
+    def weight_matrix(cls, shape):
+        shape=list(reversed(shape))
+        weights = [ [random.uniform(-1, 1)] * shape[0] for i in range(shape[1]) ]
+        return cls(weights)
+
+
+    @classmethod
+    def rand(cls, x, y):
+        return cls(np.random.rand(x, y))
+
+    @classmethod
+    def dot(cls, x, y):
+        return cls(np.dot(x, y))
+
+    def shape(self):
+        def dim(a):
+            if type(a) != list:
+                return []
+            return [len(a)] + dim(a[0])   
+        return dim(self.data)
+
     def tanh(self):
         x=self.data
         t=(math.exp(2*x))/(math.exp(2*x)+1)
+        # t=np.tanh(x)
         out=Tensor(data=t, _children=(self, ), _op='tanh')
         def _backward():
             # (1-t**2) is basically other.data
@@ -67,6 +93,3 @@ class Tensor:
     # 2. Run the backward pass(Calculatin gradients)
     # 3. Use optimizer.step to change the weights(gradient descent)
     #     - x+=stepSize*x.grad  
-
-    #TODO: Make everything in terms of numpy and not python lists
-
