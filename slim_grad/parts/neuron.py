@@ -4,7 +4,6 @@ import numpy as np
 
 class Neuron:
     def __init__(self, nin) -> None:
-        #TODO: Make weights into the shape of the inputs, not we must transpose
         #act=dot(a, b.T)+b
         # self.w=[Tensor(random.uniform(-1, 1)) for _ in range(nin)]
         self.w=Tensor.weight_matrix(x.shape)

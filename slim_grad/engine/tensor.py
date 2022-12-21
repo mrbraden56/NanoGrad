@@ -47,39 +47,9 @@ class Tensor:
         out._backward=_backward
         return out
 
-    @classmethod
-    def rand_uniform(cls, shape):
-        weights=cls.zeroes([shape[0], shape[1]])
-        for i in range(shape[0]):
-            for j in range(shape[1]):
-                weights[i][j]=random.uniform(-1, 1)
-        # weights = [ [random.uniform(-1, 1)] * shape[1] for i in range(shape[0]) ]
-        return cls(weights)
-
-    @classmethod
-    def zeroes(cls, shape):
+    def zeroes(self, shape):
         weights = [ [0] * shape[1] for i in range(shape[0]) ]
-        return cls(weights)
-
-    @classmethod
-    def dot(cls, x, y):
-        if x.shape()[1]!=y.shape()[0]: raise Exception("Incorrect array size for dot product")
-        product=cls.zeroes([x.shape()[0], y.shape()[1]])
-        y_column=[]
-        for row_idx, x_row in enumerate(x.data):
-            for col_idx, j in enumerate(range(y.shape()[1])):#col
-                for i in range(y.shape()[0]):#row
-                    y_column.append(y[i][j])
-                #here we have x row and y columns
-                product[row_idx][col_idx]=sum(r*c for r,c in zip(x_row, y_column))
-                y_column.clear()
-        temp_x=np.array(x.data)
-        temp_y=np.array(y.data)
-        temp_dot=np.dot(temp_x, temp_y)
-        print('dpme')
-
-                
-
+        return weights
 
     #returns (row, column)
     def shape(self):
@@ -87,7 +57,39 @@ class Tensor:
             if type(a) != list:
                 return []
             return [len(a)] + dim(a[0])   
-        return dim(self.data)        
+        return dim(self.data)  
+
+    @classmethod
+    def rand_uniform(cls, shape):
+        weights=cls.zeroes(cls, [shape[0], shape[1]])
+        for i in range(shape[0]):
+            for j in range(shape[1]):
+                weights[i][j]=random.uniform(-1, 1)
+        # weights = [ [random.uniform(-1, 1)] * shape[1] for i in range(shape[0]) ]
+        return cls(weights)
+
+    @classmethod
+    def dot(cls, x, y):
+        if x.shape()[1]!=y.shape()[0]: raise Exception("Incorrect array size for dot product")
+        product=cls.zeroes(cls, [x.shape()[0], y.shape()[1]])
+        y_column=[]
+        for row_idx, x_row in enumerate(x.data):
+            for col_idx, j in enumerate(range(y.shape()[1])):#col
+                for i in range(y.shape()[0]):#row
+                    y_column.append(y[i][j])
+                #here we have x row and y columns
+                #TODO: We need to get rid of sum right here because since it is not going through
+                #__add__ function we are not tracking the gradients
+                #Also __mult__ is not being called either since when we loop over list we are not loop over Tensor object
+                product[row_idx][col_idx]=sum(r*c for r,c in zip(x_row, y_column))
+                y_column.clear()
+        return cls(product)
+        
+    @staticmethod
+    def add_bias(x, y):
+        for i in range(x.shape()[0]):
+            x[i]=[xi+yi for xi,yi in zip(x[i], y.data[0])]
+        return x      
 
     #TODO: Remove
     def tanh(self):

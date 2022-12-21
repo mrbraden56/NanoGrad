@@ -20,7 +20,6 @@ class FeedForward:
 
     
 
-#TODO: Make everything a custom tensor array
 def main():
     # x=np.array([1, 2, 3, 4])
     # nn=FeedForward()
@@ -34,6 +33,7 @@ def main():
     #3 inputs, with 6 outputs, note this does not include the batch
     linear_1=Linear(3, 6)
     out=linear_1(x)
+    print(out.shape())
 
     # y=[1.0, -1.0, -1.0, 1.0]
 
