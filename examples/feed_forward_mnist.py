@@ -31,13 +31,12 @@ def main():
         [0.5, 1.0, 1.0],
         [1.0, 1.0, -1.0],
     ])
-    print(x.shape())
-    weights=Tensor.weight_matrix([3,4])
-    print(weights.shape())
+    #3 inputs, with 6 outputs, note this does not include the batch
+    linear_1=Linear(3, 6)
+    out=linear_1(x)
+
     # y=[1.0, -1.0, -1.0, 1.0]
-    # linear_1=Linear(3, 6)
-    # out=linear_1(x)
-    # print(out, type(out))
+
 
 
 
