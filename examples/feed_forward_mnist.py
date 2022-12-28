@@ -5,6 +5,7 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 from slim_grad.parts.linear import Linear
 from slim_grad.parts.neuron import Neuron
 from slim_grad.engine.tensor import Tensor
+from slim_grad.engine.matrix import Matrix
 
 class FeedForward:
     def __init__(self) -> None:
@@ -24,17 +25,17 @@ def main():
     # x=np.array([1, 2, 3, 4])
     # nn=FeedForward()
     # nn.forward(x)
-    x=Tensor([
+    x=Matrix([
         [2.0, 3.0, -1.0],
         [3.0, -1.0, 0.5],
         [0.5, 1.0, 1.0],
         [1.0, 1.0, -1.0],
     ])
+    print(x[0])
     #3 inputs, with 6 outputs, note this does not include the batch
-    linear_1=Linear(3, 6)
-    out=linear_1(x)
-    print(out.shape())
-
+    # linear_1=Linear(3, 6)
+    # out=linear_1(x)
+    # print(out.shape())
     # y=[1.0, -1.0, -1.0, 1.0]
 
 
