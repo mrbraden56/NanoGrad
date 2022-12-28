@@ -39,7 +39,14 @@ class Tensor:
             self.grad+=other.data*out.grad
             other.grad+=self.data*out.grad
         out._backward=_backward
-        return out      
+        return out   
+
+    @classmethod
+    def sum(cls, x):
+        temp=Tensor(0)
+        for tensor in x:
+            temp+=tensor
+        return temp  
 
     def backward(self):
         topo=[]
