@@ -6,12 +6,14 @@ from slim_grad.parts.linear import Linear
 from slim_grad.parts.neuron import Neuron
 from slim_grad.engine.tensor import Tensor
 from slim_grad.engine.matrix import Matrix
+from slim_grad.engine.optimizer import SGD
 
 class FeedForward:
     def __init__(self) -> None:
-        self.l1=Linear(3, 16)
-        self.l2=Linear(16, 32)
-        self.l3=Linear(32, 1)
+        #TODO: If neurons get to big the loss/gradients explode
+        self.l1=Linear(3, 4)
+        self.l2=Linear(4, 4)
+        self.l3=Linear(4, 1)
         self.net=[self.l1, self.l2, self.l3]
 
     def num_parameters(self):
@@ -37,16 +39,17 @@ def main():
         [2.0, 3.0, -1.0]
     ])
     nn=FeedForward()
+    optimizer=SGD(params=nn.parameters(), lr=0.01)
     ypred=nn.forward(x)
     y=Matrix.array([1.0, -1.0, -1.0, 1.0])
-    ypred=Matrix.squeeze(ypred, 1)
-    loss=Matrix.MSE(ypred=ypred, ytarget=y)
-    #TODO: Implemented updating data from gradients
-    loss.backwards()
-    print(loss)
-    print(nn.num_parameters())
-    print(nn.parameters()[0].shape)
-
+    for i in range(100):
+        ypred=nn.forward(x)
+        ypred=Matrix.squeeze(ypred, 1)
+        loss=Matrix.MSE(ypred=ypred, ytarget=y)
+        loss.backwards()
+        optimizer.step()
+        optimizer.zero_grad()
+        print(ypred)
 
 
 
