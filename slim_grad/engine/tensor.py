@@ -1,8 +1,3 @@
-import random
-import numpy as np
-import math
-
-
 # _foo: used internally(private)
 # foo_: used when you want a variable that is a keyword
 # _: used as placeholder for when you dont need something(for _ in range(100))
@@ -32,6 +27,15 @@ class Tensor:
         out._backward=_backward
         return out
 
+    def __sub__(self, other: type['Tensor']):
+        other = other if isinstance(other, Tensor) else Tensor(other)
+        out=Tensor(data=self.data-other.data, _children=(self, other), _op='-')
+        def _backward():
+            self.grad+=(-out.grad)
+            other.grad+=(-out.grad)
+        out._backward=_backward
+        return out
+
     def __mul__(self, other: type['Tensor']):
         other = other if isinstance(other, Tensor) else Tensor(other)
         out=Tensor(data=self.data*other.data, _children=(self, other), _op='*')
@@ -39,16 +43,24 @@ class Tensor:
             self.grad+=other.data*out.grad
             other.grad+=self.data*out.grad
         out._backward=_backward
-        return out   
+        return out
 
-    @classmethod
-    def sum(cls, x):
-        temp=Tensor(0)
-        for tensor in x:
-            temp+=tensor
-        return temp  
+    def __pow__(self, other: type['Tensor']):
+        other = other if isinstance(other, Tensor) else Tensor(other)
+        out=Tensor(data=self.data**other.data, _children=(self, other), _op='*')
+        def _backward():
+            self.grad+=other.data*(self.data**(other.data-1)) * out.grad
+        out._backward=_backward
+        return out  
 
-    def backward(self):
+    def __truediv__(self, other): # self / other
+        return self * other**-1
+
+    def __rtruediv__(self, other): # other / self
+        return other * self**-1
+
+
+    def backwards(self):
         topo=[]
         visited=set()
         def build_topo(v):

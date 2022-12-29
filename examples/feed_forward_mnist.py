@@ -9,31 +9,43 @@ from slim_grad.engine.matrix import Matrix
 
 class FeedForward:
     def __init__(self) -> None:
-        self.l1=Linear(64, 128)
-        self.l2=Linear(128, 256)
-        self.l3=Linear(256, 128)
-        self.l4=Linear(128, 64)
-        self.l5=Linear(64, 1)
+        self.l1=Linear(3, 16)
+        self.l2=Linear(16, 32)
+        self.l3=Linear(32, 1)
+        self.net=[self.l1, self.l2, self.l3]
+
+    def num_parameters(self):
+        return sum(weights.num_parameters() for weights in self.net)
+
+    def parameters(self):
+        return [weights.parameters() for weights in self.net]
 
     def forward(self, x):
         x1=self.l1(x)
-        print(len(x1))
+        x2=self.l2(x1)
+        x3=self.l3(x2)
+        return x3
 
     
 
 def main():
-    # x=np.array([1, 2, 3, 4])
-    # nn=FeedForward()
-    # nn.forward(x)
+    #(4,3)
     x=Matrix.array([
+        [2.0, 3.0, -1.0],
+        [2.0, 3.0, -1.0],
+        [2.0, 3.0, -1.0],
         [2.0, 3.0, -1.0]
     ])
-    print(x.shape)
-    #3 inputs, with 6 outputs, note this does not include the batch
-    linear_1=Linear(3, 6)
-    out=linear_1(x)
-    print(out.shape)
-    # y=[1.0, -1.0, -1.0, 1.0]
+    nn=FeedForward()
+    ypred=nn.forward(x)
+    y=Matrix.array([1.0, -1.0, -1.0, 1.0])
+    ypred=Matrix.squeeze(ypred, 1)
+    loss=Matrix.MSE(ypred=ypred, ytarget=y)
+    #TODO: Implemented updating data from gradients
+    loss.backwards()
+    print(loss)
+    print(nn.num_parameters())
+    print(nn.parameters()[0].shape)
 
 
 
