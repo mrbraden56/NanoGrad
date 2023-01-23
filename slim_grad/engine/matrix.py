@@ -26,7 +26,7 @@ class Matrix:
             subshape = get_shape(lst[0])
             return shape + subshape
         shape=get_shape(data)
-        if 1 in shape: shape=[max(shape)]
+        # if 1 in shape: shape=[max(shape)]
         if len(shape)==1:
             for i in range(shape[0]):
                 data[i]=Tensor(data[i])
@@ -74,6 +74,14 @@ class Matrix:
             x[i]=[xi+yi for xi,yi in zip(x[i], y.data[0])]
         return x 
 
+    #TODO: Need to backprop through relu
+    @staticmethod
+    def relu(x):
+        for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    x.data[i][j]=Tensor(max(0, x.data[i][j].data), _children=x.data[i][j]._prev)
+        return x
+
     @classmethod
     def sum(cls, x):
         temp=Tensor(0)
@@ -86,20 +94,32 @@ class Matrix:
     def ew_subtract(cls, x, y):
         if tuple(x.shape)!=tuple(y.shape): raise Exception("Matrices not of same size")
         result=cls.zeros(x.shape)
-        for i in range(x.shape[0]):
-            result[i]=x[i] - y[i]
+        if len(x.shape)==2:
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    result[i][j]=x[i][j]-y[i][j]
+        else:
+            for i in range(x.shape[0]):
+                result[i]=x[i] - y[i]
         return result
 
     @classmethod
-    def ew_pow(cls, x):
-        for i in range(x.shape[0]):
-            x[i]=x[i] ** 2
-        return x
+    def ew_pow(cls, x, power):
+        if len(x.shape)==2:
+            product=cls.zeros([x.shape[0], x.shape[1]])
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    product[i][j]=x[i][j]**power
+        else:
+            product=cls.zeros([x.shape[0]])
+            for i in range(x.shape[0]):
+                product[i]=x[i] ** power
+        return product
 
     @classmethod
     def MSE(cls, ypred, ytarget):
         error=cls.ew_subtract(ytarget, ypred)
-        squared_er=cls.ew_pow(error)
+        squared_er=cls.ew_pow(error, 2)
         summed=cls.sum(squared_er)
         result=summed/ypred.shape[0]
         return result

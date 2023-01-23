@@ -7,6 +7,7 @@ class Linear:
         # self.neurons = [Neuron(nin) for _ in range(nout)]
         self.nin=nin
         self.nout=nout
+        #TODO: Change to Glorot initialization with a normal distribution. 
         self.weights=Matrix.rand_uniform([nin, nout])
         self.b=Matrix.rand_uniform([1, nout])
 
@@ -16,7 +17,7 @@ class Linear:
     def __repr__(self) -> int:
         return f"Linear Layer (3, 6)"
 
-    def num_parameters(self):
+    def count(self):
         return self.nin*self.nout
 
     def parameters(self):
