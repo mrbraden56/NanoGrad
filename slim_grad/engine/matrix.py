@@ -1,5 +1,6 @@
 from slim_grad.engine.tensor import Tensor
 import random
+import numpy as np
 
 #Matrix([tensor(5), tensor(3)])
 class Matrix:
@@ -16,7 +17,6 @@ class Matrix:
     def __setitem__(self, idx, val):
         self.data[idx]=val
 
-    #TODO: Make work for arbitrary dimension
     @classmethod
     def array(cls, data):
         def get_shape(lst):
@@ -27,9 +27,11 @@ class Matrix:
             return shape + subshape
         shape=get_shape(data)
         # if 1 in shape: shape=[max(shape)]
+        #1 dim array
         if len(shape)==1:
             for i in range(shape[0]):
                 data[i]=Tensor(data[i])
+        #2 dim array
         else:
             for i in range(shape[0]):
                 if len(shape)==1: 
@@ -48,11 +50,23 @@ class Matrix:
         return cls(weights, shape)
 
     @classmethod
-    def rand_uniform(cls, shape):
+    def normal(cls, shape):
         weights=cls.zeros(shape)
         for i in range(shape[0]):
             for j in range(shape[1]):
                 weights[i][j]=Tensor(random.uniform(-1, 1))
+        return weights
+
+    @classmethod
+    def glorot_normal(cls, shape):
+        #loc->mean, scale->std, 
+        # random.normal(loc=0.0, scale=1.0, size=None)
+        mean=0
+        std=np.sqrt(2/(shape[0]+shape[1]))
+        weights=cls.zeros(shape)
+        for i in range(shape[0]):
+            for j in range(shape[1]):
+                weights[i][j]=Tensor(np.random.normal(loc=mean, scale=std))
         return weights
 
     @classmethod
@@ -74,7 +88,7 @@ class Matrix:
             x[i]=[xi+yi for xi,yi in zip(x[i], y.data[0])]
         return x 
 
-    #TODO: Need to backprop through relu
+    #I think we are backpropogating through
     @staticmethod
     def relu(x):
         for i in range(x.shape[0]):

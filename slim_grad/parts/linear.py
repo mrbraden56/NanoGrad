@@ -7,9 +7,8 @@ class Linear:
         # self.neurons = [Neuron(nin) for _ in range(nout)]
         self.nin=nin
         self.nout=nout
-        #TODO: Change to Glorot initialization with a normal distribution. 
-        self.weights=Matrix.rand_uniform([nin, nout])
-        self.b=Matrix.rand_uniform([1, nout])
+        self.weights=Matrix.glorot_normal([nin, nout])
+        self.b=Matrix.glorot_normal([1, nout])
 
     def __call__(self, x):
         return Matrix.add_bias(Matrix.dot(x, self.weights), self.b)
@@ -21,4 +20,6 @@ class Linear:
         return self.nin*self.nout
 
     def parameters(self):
+        #I am appending this bias to self.weights so that the bias gets backpropogated
+        self.weights.data.append(self.b.data[0])
         return self.weights
