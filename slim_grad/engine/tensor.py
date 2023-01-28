@@ -18,6 +18,8 @@ class Tensor:
     def __repr__(self) -> str:
         return f"Tensor(data={self.data})"
 
+    #remeber out.grad is multiplied onto everything because that is the accumulation of all
+    #prev gradients, which is the chain rule
     def __add__(self, other: type['Tensor']):
         other = other if isinstance(other, Tensor) else Tensor(other)
         out=Tensor(data=self.data+other.data, _children=(self, other), _op='+')
