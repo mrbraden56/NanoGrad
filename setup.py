@@ -5,7 +5,7 @@ directory = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(directory, 'README.md'), encoding='utf-8') as f:
   long_description = f.read()
 
-setup(name='slimgrad',
+setup(name='nanograd',
       version='0.0.0',
       author='Braden Lockwood',
       license='MIT',
