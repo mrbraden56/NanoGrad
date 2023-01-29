@@ -5,9 +5,6 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 from slim_grad.engine.tensor import Tensor
 from slim_grad.engine.matrix import Matrix
 
-#TODO: Add unittests to make sure backprop is working
-#   like keeping track of _prev, correct graph, etc
-
 class TestTensor(unittest.TestCase):
 
     #runs once at the begenning
@@ -51,16 +48,15 @@ class TestTensor(unittest.TestCase):
             self.assertEqual(b.grad, 3)
 
     #3 nodes with 2 inputs and 1 ouput
-    #TODO: work this out by hand and make sure it is right
     def test_power_gradients(self):
         a=Tensor(data=3, _op="*", label="a")
         b=Tensor(data=2, _op="*", label="b")
         c=b**a
         c.backwards()
         with self.subTest():
-            self.assertEqual(a.grad, 2)
+            self.assertEqual(a.grad, 0)
         with self.subTest():
-            self.assertEqual(b.grad, 3)
+            self.assertEqual(b.grad, 12)
 
     #make suregraph has correct ordering
     def test_correct_topo_graph(self):

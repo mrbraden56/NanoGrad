@@ -1,5 +1,4 @@
 from slim_grad.engine.tensor import Tensor
-#TODO: Add ADAM optimizer
 class SGD:
     def __init__(self, params, lr=0.01) -> None:
         self.params=params

@@ -10,9 +10,9 @@ from slim_grad.engine.optimizer import SGD
 
 class FeedForward:
     def __init__(self) -> None:
-        self.l1=Linear(3, 8)
-        self.l2=Linear(8, 8)
-        self.l3=Linear(8, 4)
+        self.l1=Linear(3, 4)
+        self.l2=Linear(4, 4)
+        self.l3=Linear(4, 4)
         self.l4=Linear(4, 1)
         self.net=[self.l1, self.l2, self.l3, self.l4]
 
@@ -41,7 +41,7 @@ def main():
     nn=FeedForward()
     print(nn.count())
     optimizer=SGD(params=nn.parameters(), lr=0.1)
-    y=Matrix.array([2.0, -1.0, -3.0, 1.0])
+    y=Matrix.array([1.0, -1.0, 1.0, 1.0])
     #with 9999 epochs we got down to 3.4e-06 loss and perfect prediction of y
     #problem is some times it explodes or doesnt find a local minimum(vanishes) and gets stuck
     #     at a loss that is too high like 2.

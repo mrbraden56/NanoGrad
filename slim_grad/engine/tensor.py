@@ -1,3 +1,5 @@
+import numpy as np
+
 # _foo: used internally(private)
 # foo_: used when you want a variable that is a keyword
 # _: used as placeholder for when you dont need something(for _ in range(100))
@@ -52,6 +54,7 @@ class Tensor:
         out=Tensor(data=self.data**other.data, _children=(self, other), _op='*')
         def _backward():
             self.grad+=other.data*(self.data**(other.data-1)) * out.grad
+            # other.grad+=np.log(self.data)*(self.data**(other.data)) * out.grad
         out._backward=_backward
         return out  
 
