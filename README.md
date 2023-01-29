@@ -12,7 +12,7 @@
   </a>
 
   <p align="center">
-    Patrick Grad   
+    NanoGrad   
     <br />
   </p>
 </p>
