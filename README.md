@@ -8,11 +8,13 @@
 <br />
 <p align="center">
   <a>
-    <img src="img/patrick.jpg?raw=true" alt="Logo" width="1040" height="432">
+    <img src="img/SD_nano_grad.png?raw=true" alt="Logo" width="512" height="512">
   </a>
 
   <p align="center">
-    Patrick Grad   
+    NanoGrad - matrix library, autograd engine, deep learning library all from scratch
+    <br />
+    Upcoming work: C++ and Rust backend, CUDA enabled backend
     <br />
   </p>
 </p>
