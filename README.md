@@ -12,7 +12,8 @@
   </a>
 
   <p align="center">
-    NanoGrad   
+    NanoGrad - matrix library, autograd engine, deep learning library all from scratch
+    Upcoming work: C++ and Rust backend, custom CUDA
     <br />
   </p>
 </p>
