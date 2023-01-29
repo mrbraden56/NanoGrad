@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a>
-    <img src="img/patrick.jpg?raw=true" alt="Logo" width="1040" height="432">
+    <img src="img/SD_nano_grad.png?raw=true" alt="Logo" width="1040" height="432">
   </a>
 
   <p align="center">
