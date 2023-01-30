@@ -19,6 +19,7 @@ class Tensor:
             self.grad+=out.grad
             other.grad+=out.grad
         out._backward=_backward
+        return out
 
     def __mul__(self, other: type['Tensor']):
         other = other if isinstance(other, Tensor) else Tensor(other)
