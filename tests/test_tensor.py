@@ -11,7 +11,6 @@ class TestTensor(unittest.TestCase):
     #runs once at the begenning
     @classmethod
     def setUpClass(cls):
-        #TODO: Create loop in each test for these numbers
         cls.x=[1, 4, 2, 6, 9, 12.3, -5, 23.3, 574.2]
         cls.y=[-3, 6, 1, 4.5, 6, 3.7, -900, 11, 42]
 
@@ -59,72 +58,69 @@ class TestTensor(unittest.TestCase):
                 self.assertIn(y, children)
 
     def test_multiplication_gradients(self):
-        d=Tensor(data=3, _op="*", label="a")
-        e=Tensor(data=2, _op="*", label="b")
-        f=d*e
-        f.backwards()
-        with self.subTest():
-            self.assertEqual(d.grad, e.data)
-        with self.subTest():
-            self.assertEqual(e.grad, d.data)
-        with self.subTest():
-            self.assertEqual(d.data, 3)
-        with self.subTest():
-            self.assertEqual(e.data, 2)
-        with self.subTest():
-            self.assertEqual(f.data, d.data*e.data)
+        for x,y in zip(self.x, self.y):
+            d=Tensor(data=x, _op="*", label="a")
+            e=Tensor(data=y, _op="*", label="b")
+            f=d*e
+            f.backwards()
+            with self.subTest():
+                self.assertEqual(d.grad, e.data)
+            with self.subTest():
+                self.assertEqual(e.grad, d.data)
+            with self.subTest():
+                self.assertEqual(d.data, x)
+            with self.subTest():
+                self.assertEqual(e.data, y)
+            with self.subTest():
+                self.assertEqual(f.data, d.data*e.data)
 
     def test_multiplication_children(self):
-        d=Tensor(data=3, _op="*", label="a")
-        e=Tensor(data=2, _op="*", label="b")
-        f=d*e
-        children=[]
-        children.append(f._prev.pop().data)
-        children.append(f._prev.pop().data)
-        with self.subTest():
-            self.assertIn(3, children)
-        with self.subTest():
-            self.assertIn(2, children)
+        for x,y in zip(self.x, self.y):
+            d=Tensor(data=x, _op="*", label="a")
+            e=Tensor(data=y, _op="*", label="b")
+            f=d*e
+            children=[]
+            children.append(f._prev.pop().data)
+            children.append(f._prev.pop().data)
+            with self.subTest():
+                self.assertIn(x, children)
+            with self.subTest():
+                self.assertIn(y, children)
 
     def test_power_gradients(self):
-        d=Tensor(data=3, _op="**", label="a")
-        e=Tensor(data=2, _op="**", label="b")
-        f=d**e
-        f.backwards()
-        with self.subTest():
-            self.assertEqual(d.grad, 6)
-        with self.subTest():
-            self.assertEqual(e.grad, np.log(3)*(3**2))
-        with self.subTest():
-            self.assertEqual(d.data, 3)
-        with self.subTest():
-            self.assertEqual(e.data, 2)
-        with self.subTest():
-            self.assertEqual(f.data, 9)
+        for x,y in zip(self.x, self.y):
+            d=Tensor(data=x, _op="**", label="a")
+            e=Tensor(data=y, _op="**", label="b")
+            f=d**e
+            f.backwards()
+            with self.subTest():
+                self.assertEqual(d.grad, (e*(d**(e-1))).data)
+            with self.subTest():
+                if x<1: self.assertEqual(e.grad, 0)
+                else: self.assertEqual(e.grad, np.log(x)*(x**y))
+            with self.subTest():
+                self.assertEqual(d.data, x)
+            with self.subTest():
+                self.assertEqual(e.data, y)
+            with self.subTest():
+                self.assertEqual(f.data, x**y)
 
     def test_power_children(self):
-        d=Tensor(data=3, _op="**", label="a")
-        e=Tensor(data=2, _op="**", label="b")
-        f=d**e
-        children=[]
-        children.append(f._prev.pop().data)
-        children.append(f._prev.pop().data)
-        with self.subTest():
-            self.assertIn(3, children)
-        with self.subTest():
-            self.assertIn(2, children)
+        for x,y in zip(self.x, self.y):
+            d=Tensor(data=x, _op="**", label="a")
+            e=Tensor(data=y, _op="**", label="b")
+            f=d**e
+            children=[]
+            children.append(f._prev.pop().data)
+            children.append(f._prev.pop().data)
+            with self.subTest():
+                self.assertIn(x, children)
+            with self.subTest():
+                self.assertIn(y, children)
 
-    def test_add_then_mult_gradoents(self):
-        pass
+    #TODO: Test method for correct topo graph
 
-    def test_add_then_mult_children(self):
-        pass
-
-    def test_power_then_add_gradoents(self):
-        pass
-
-    def test_power_then_add_children(self):
-        pass
+    
 
 if __name__ == '__main__':
     unittest.main()
