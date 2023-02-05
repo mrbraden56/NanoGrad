@@ -1,6 +1,9 @@
 import os
 from nano_grad.engine.tensor import Tensor
+import random
+import numpy as np
 
+#TODO: See if there is anything we can do better in terms of design
 class Matrix:
     def __init__(self, data, shape=None, backend="python") -> None:
         self.data=data
@@ -15,6 +18,12 @@ class Matrix:
 
     def __setitem__(self, idx, val):
         self.data[idx]=val
+
+    def __add__(self, other: type['Matrix']):
+        for i in range(self.shape[0]):
+            for j in range(self.shape[1]):
+                self.data[i][j]+=other.data
+        return self
 
     @classmethod
     def array(cls, data):
@@ -43,7 +52,7 @@ class Matrix:
             weights=[Tensor(0)] * shape[0]
             if type(shape)!=list: shape=[shape]
         elif len(shape)==2: 
-            weights = [ [Tensor(0)] * shape[0] for i in range(shape[1]) ]
+            weights = [ [Tensor(0)] * shape[1] for i in range(shape[0]) ]
         return cls(weights, shape)
 
     @classmethod
@@ -65,5 +74,19 @@ class Matrix:
         for tensor in x:
             temp+=tensor
         return temp
+
+    @classmethod
+    def normal(cls, glorot=False, size=None):
+        if size==None: return Tensor(random.uniform(-1, 1)) 
+        weights=cls.zeros(size)
+        for i in range(size[0]):
+            for j in range(size[1]):
+                if not glorot:
+                    weights[i][j]=Tensor(random.uniform(-1, 1))
+                if glorot:
+                    mean=0
+                    std=np.sqrt(2/(size[0]+size[1]))
+                    weights[i][j]=Tensor(np.random.normal(loc=mean, scale=std))
+        return weights
 
     
