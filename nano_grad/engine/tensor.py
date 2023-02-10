@@ -7,7 +7,7 @@ class Tensor:
         self._op=_op
         self.label=label
         self.grad=0.0
-        self._backward=lambda: None 
+        self._backward=lambda: None  
 
     def __repr__(self) -> str:
         return f"Tensor(data={self.data})"
