@@ -76,17 +76,23 @@ class Matrix:
         return temp
 
     @classmethod
-    def normal(cls, glorot=False, size=None):
+    def normal(cls, size=None, glorot=False):
         if size==None: return Tensor(random.uniform(-1, 1)) 
         weights=cls.zeros(size)
+        mean=0
+        std=np.sqrt(2/(size[0]+size[1]))
         for i in range(size[0]):
             for j in range(size[1]):
-                if not glorot:
-                    weights[i][j]=Tensor(random.uniform(-1, 1))
-                if glorot:
-                    mean=0
-                    std=np.sqrt(2/(size[0]+size[1]))
-                    weights[i][j]=Tensor(np.random.normal(loc=mean, scale=std))
+                if not glorot: weights[i][j]=Tensor(random.uniform(-1, 1))
+                if glorot: weights[i][j]=Tensor(np.random.normal(loc=mean, scale=std))
         return weights
+
+    @classmethod
+    def subtract(cls, x, y, element_wise=True):
+        pass
+
+    @classmethod
+    def pow(cls, x, y, element_wise=True):
+        pass
 
     

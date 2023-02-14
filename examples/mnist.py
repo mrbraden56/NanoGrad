@@ -1,22 +1,19 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[1]))
-from nano_grad.engine.tensor import Tensor
 from nano_grad.engine.matrix import Matrix
 from nano_grad.nn.linear import Linear
+from nano_grad.nn.network import Network
+from nano_grad.nn.optimizer import SGD
 
-class FeedForward:
+class FeedForward(Network):
     def __init__(self) -> None:
+
         self.l1=Linear(3, 4)
         self.l2=Linear(4, 4)
         self.l3=Linear(4, 1)
-        self.net=[self.l1, self.l2, self.l3]
 
-    def count(self):
-        return sum(weights.size() for weights in self.net)
-
-    def parameters(self):
-        return [weights.parameters() for weights in self.net]
+        Network.__init__(self, vars(locals()['self']))
 
     def forward(self, x):
         x1=self.l1(x)
@@ -34,7 +31,14 @@ def main():
     ])
     ytarget=Matrix.array([1.0, -1.0, 1.0, 1.0])
     nn=FeedForward()
-    ypred=nn.forward(x)
+    optimizer=SGD(params=nn.parameters(), lr=0.1)
+    for i in range(1000):
+        ypred=nn.forward(x)
+        loss=Matrix.MSE(ypred=ypred, ytarget=ytarget)
+        optimizer.zero_grad()
+        loss.backwards()
+        optimizer.step()
+        print(i, loss.data)
     print(ypred)
 
 if __name__ == "__main__":

@@ -1,12 +1,11 @@
 from nano_grad.engine.matrix import Matrix
 
-#TODO: Create tests for Linear
 class Linear:
     def __init__(self, nin, nout) -> None:
         self.nin=nin
         self.nout=nout
-        self.weights=Matrix.normal(glorot=True, size=[nin, nout])
-        self.bias=Matrix.normal(glorot=True)
+        self.weights=Matrix.normal(size=[nin, nout], glorot=True)
+        self.bias=Matrix.normal(size=None, glorot=True)
 
     def __call__(self, x):
             return Matrix.dot(x, self.weights) + self.bias
@@ -19,3 +18,6 @@ class Linear:
 
     def parameters(self):
         return self.weights, self.bias
+
+    def shape(self):
+        return [self.nin, self.nout]
