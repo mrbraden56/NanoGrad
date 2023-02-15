@@ -5,6 +5,9 @@ from nano_grad.engine.matrix import Matrix
 from nano_grad.nn.linear import Linear
 from nano_grad.nn.network import Network
 from nano_grad.nn.optimizer import SGD
+from nano_grad.nn.loss import MSE
+from nano_grad.nn.activation import ReLU
+from nano_grad.nn.activation import Log_Softmax
 
 class FeedForward(Network):
     def __init__(self) -> None:
@@ -16,9 +19,9 @@ class FeedForward(Network):
         Network.__init__(self, vars(locals()['self']))
 
     def forward(self, x):
-        x1=self.l1(x)
-        x2=self.l2(x1)
-        x3=self.l3(x2)
+        x1=ReLU(self.l1(x))
+        x2=ReLU(self.l2(x1))
+        x3=Log_Softmax(self.l3(x2))
         return x3
 
 
@@ -34,7 +37,8 @@ def main():
     optimizer=SGD(params=nn.parameters(), lr=0.1)
     for i in range(1000):
         ypred=nn.forward(x)
-        loss=Matrix.MSE(ypred=ypred, ytarget=ytarget)
+        ypred=Matrix.squeeze(ypred, 1)
+        loss=MSE(ypred=ypred, ytarget=ytarget)
         optimizer.zero_grad()
         loss.backwards()
         optimizer.step()

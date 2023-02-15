@@ -40,6 +40,21 @@ class Tensor:
         out._backward=_backward
         return out
 
+    def relu(self):
+        out=Tensor(data=max(0, self.data), _children=(self, ), _op='')
+        def _backward():
+            if out.data==0: self.grad=0
+        out._backward=_backward
+        return out
+
+    def log_softmax(self):
+        softmax=np.exp(self.data)
+        out=Tensor(data=softmax, _children=(self, ), _op='')
+        def _backward():
+            pass
+        out._backward=_backward
+        return out
+
     def __neg__(self):
         return self * (-1)
 

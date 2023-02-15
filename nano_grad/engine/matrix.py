@@ -25,6 +25,18 @@ class Matrix:
                 self.data[i][j]+=other.data
         return self
 
+    def __sub__(self, other: type['Matrix']):
+        for i in range(self.shape[0]):
+            for j in range(self.shape[1]):
+                self.data[i][j]-=other.data
+        return self
+
+    def __pow__(self, other: type['Matrix']):
+        for i in range(self.shape[0]):
+            for j in range(self.shape[1]):
+                self.data[i][j]=self.data[i][j]**other.data
+        return self
+
     @classmethod
     def array(cls, data):
         def get_shape(lst):
@@ -88,11 +100,42 @@ class Matrix:
         return weights
 
     @classmethod
-    def subtract(cls, x, y, element_wise=True):
-        pass
+    def subtract(cls, x, y):
+        if tuple(x.shape)!=tuple(y.shape): raise Exception("Matrices not of same size")
+        result=cls.zeros(x.shape)
+        if len(x.shape)==2:
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    result[i][j]=x[i][j]-y[i][j]
+        else:
+            for i in range(x.shape[0]):
+                result[i]=x[i] - y[i]
+        return result
 
     @classmethod
-    def pow(cls, x, y, element_wise=True):
-        pass
+    def pow(cls, x, y):
+        if len(x.shape)==2:
+            product=cls.zeros([x.shape[0], x.shape[1]])
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    product[i][j]=x[i][j]**y
+        else:
+            product=cls.zeros([x.shape[0]])
+            for i in range(x.shape[0]):
+                product[i]=x[i] ** y
+        return product
+
+    @classmethod
+    def squeeze(cls, x, dim):
+        #only works for 2 dims
+        new_shape=x.shape[int(not bool(dim))]
+        result=cls.zeros([new_shape])
+        for i in range(x.shape[0]):
+            for j in range(x.shape[1]):
+                if x.shape[0]==1:
+                    result[j]==x[i][j]
+                elif x.shape[1]==1:
+                    result[i]=x[i][j]
+        return result
 
     
