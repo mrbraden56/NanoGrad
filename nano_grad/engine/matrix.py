@@ -26,6 +26,7 @@ class Matrix:
         return self
 
     def __sub__(self, other: type['Matrix']):
+        other = other if isinstance(other, Tensor) else Tensor(other)
         for i in range(self.shape[0]):
             for j in range(self.shape[1]):
                 self.data[i][j]-=other.data
@@ -35,6 +36,12 @@ class Matrix:
         for i in range(self.shape[0]):
             for j in range(self.shape[1]):
                 self.data[i][j]=self.data[i][j]**other.data
+        return self
+    
+    def __truediv__(self, other: type['Tensor']):
+        for i in range(self.shape[0]):
+            for j in range(self.shape[1]):
+                self.data[i][j]=self.data[i][j]/other
         return self
 
     @classmethod
@@ -48,6 +55,8 @@ class Matrix:
         shape=get_shape(data)
         if len(shape)==1:
             for i in range(shape[0]):
+                if isinstance(data[i], Tensor):
+                    return cls(data, shape)
                 data[i]=Tensor(data[i])
         elif len(shape)==2:
             for i in range(shape[0]):
@@ -82,9 +91,17 @@ class Matrix:
 
     @classmethod
     def sum(cls, x):
+        #list, Matrix
+        x = x if isinstance(x, Matrix) else cls.array(x)
         temp=Tensor(0)
-        for tensor in x:
-            temp+=tensor
+        if len(x.shape)==2:
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    test=x[i][j]
+                    temp+=x[i][j]
+        else:
+            for i in range(x.shape[0]):
+                temp+=x[i]
         return temp
 
     @classmethod
@@ -110,6 +127,20 @@ class Matrix:
         else:
             for i in range(x.shape[0]):
                 result[i]=x[i] - y[i]
+        return result
+    
+    @classmethod
+    def divide(cls, x, y):
+        if tuple(x.shape)!=tuple(y.shape): raise Exception("Matrices not of same size")
+        result=cls.zeros(x.shape)
+        if len(x.shape)==2:
+            for i in range(x.shape[0]):
+                for j in range(x.shape[1]):
+                    #TODO: Do I have to track 1 / y[i][j]? 
+                    result[i][j]=x[i][j] * (1 / y[i][j])
+        else:
+            for i in range(x.shape[0]):
+                result[i]=x[i] * (1 / y[i])
         return result
 
     @classmethod
@@ -137,5 +168,22 @@ class Matrix:
                 elif x.shape[1]==1:
                     result[i]=x[i][j]
         return result
+    
+    @classmethod
+    def exp(cls, x):
+        e=Tensor(2.718281)
+        for i in range(x.shape[0]):
+            for j in range(x.shape[1]):
+                x[i][j]=e**x[i][j]
+        return x
+    
+    @staticmethod
+    def max(x):
+        max_tracker=x[0][0].data
+        for i in range(x.shape[0]):
+            for j in range(x.shape[1]):
+                if x[i][j].data>max_tracker:
+                    max_tracker=x[i][j].data
+        return max_tracker
 
     

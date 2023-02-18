@@ -7,7 +7,7 @@ from nano_grad.nn.network import Network
 from nano_grad.nn.optimizer import SGD
 from nano_grad.nn.loss import MSE
 from nano_grad.nn.activation import ReLU
-from nano_grad.nn.activation import Log_Softmax
+from nano_grad.nn.activation import Softmax
 
 class FeedForward(Network):
     def __init__(self) -> None:
@@ -21,7 +21,7 @@ class FeedForward(Network):
     def forward(self, x):
         x1=ReLU(self.l1(x))
         x2=ReLU(self.l2(x1))
-        # x3=Log_Softmax(self.l3(x2))
+        # x3=Softmax(self.l3(x2))
         x3=self.l3(x2)
         return x3
 
