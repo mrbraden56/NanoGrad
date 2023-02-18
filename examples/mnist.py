@@ -21,7 +21,8 @@ class FeedForward(Network):
     def forward(self, x):
         x1=ReLU(self.l1(x))
         x2=ReLU(self.l2(x1))
-        x3=Log_Softmax(self.l3(x2))
+        # x3=Log_Softmax(self.l3(x2))
+        x3=self.l3(x2)
         return x3
 
 

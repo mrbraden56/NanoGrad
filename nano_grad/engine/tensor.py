@@ -35,15 +35,17 @@ class Tensor:
         out=Tensor(data=self.data**other.data, _children=(self, other), _op='**')
         def _backward():
             self.grad=(other.data*(self.data**(other.data-1)))*out.grad
-            if self.data<1: other.grad=0
-            else: other.grad=((np.log(self.data))*(self.data**other.data))*out.grad
+            if self.data<1: 
+                other.grad=0
+            else: 
+                other.grad=((np.log(self.data))*(self.data**other.data))*out.grad
         out._backward=_backward
         return out
 
     def relu(self):
         out=Tensor(data=max(0, self.data), _children=(self, ), _op='')
         def _backward():
-            if out.data==0: self.grad=0
+            self.grad += (out.data > 0) * out.grad
         out._backward=_backward
         return out
 
