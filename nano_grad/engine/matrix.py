@@ -52,19 +52,29 @@ class Matrix:
             shape = [len(lst)]
             subshape = get_shape(lst[0])
             return shape + subshape
-        shape=get_shape(data)
+        if isinstance(data, np.ndarray):
+            shape = data.shape
+            if len(shape)==1: product=cls.zeros([data.shape[0], 1])
+            else: product=cls.zeros([data.shape[0], data.shape[1]])
+        else:
+            shape= get_shape(data)
         if len(shape)==1:
             for i in range(shape[0]):
                 if isinstance(data[i], Tensor):
                     return cls(data, shape)
-                data[i]=Tensor(data[i])
+                elif isinstance(data, np.ndarray):
+                    product[i][0]=int(data[i].astype(int))
+                else: data[i]=Tensor(data[i])
         elif len(shape)==2:
             for i in range(shape[0]):
                 if len(shape)==1: 
                     data[i]=Tensor(data[i])
                     continue
                 for j in range(shape[1]):
-                    data[i][j]=Tensor(data[i][j])
+                    if isinstance(data, np.ndarray):
+                        number=int(data[i][j].astype(int))
+                        product[i][j]=Tensor(number)
+                    else: data[i][j]=Tensor(data[i][j])
         return cls(data, shape)
 
     @classmethod

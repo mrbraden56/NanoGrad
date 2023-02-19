@@ -8,6 +8,8 @@ from nano_grad.nn.optimizer import SGD
 from nano_grad.nn.loss import MSE
 from nano_grad.nn.activation import ReLU
 from nano_grad.nn.activation import Softmax
+import pandas as pd
+import numpy as np
 
 class FeedForward(Network):
     def __init__(self) -> None:
@@ -27,24 +29,43 @@ class FeedForward(Network):
 
 
 def main():
-    x=Matrix.array([
-        [2.0, 3.0, -1.0],
-        [1.0, 1.0, -1.0],
-        [-1.0, 2.0, -3.0],
-        [1.0, 2.0, 3.0]
-    ])
-    ytarget=Matrix.array([1.0, -1.0, 1.0, 1.0])
-    nn=FeedForward()
-    optimizer=SGD(params=nn.parameters(), lr=0.1)
-    for i in range(1000):
-        ypred=nn.forward(x)
-        ypred=Matrix.squeeze(ypred, 1)
-        loss=MSE(ypred=ypred, ytarget=ytarget)
-        optimizer.zero_grad()
-        loss.backwards()
-        optimizer.step()
-        print(i, loss.data)
-    print(ypred)
+    data=pd.read_csv('C:/Users/brade/Research/nano_grad/examples/data/train.csv')
+    data=data.loc[:1000,:]
+    data = np.array(data)
+    dev_data = data[800:].T
+    y_test = dev_data[0] # labels
+    x_test = dev_data[1:] # pixels
+    x_test = x_test / 255. # normalizing pixels
+
+    #separate train data
+    train_data = data[:800].T
+    y_train = train_data[0] # labels
+    x_train = train_data[1:] # pixels
+    x_train = x_train / 255.
+
+    x_train=Matrix.array(x_train)
+    y_train=Matrix.array(y_train)
+    x_test=Matrix.array(x_test)
+    y_test=Matrix.array(y_test)
+    print(data.shape)
+    # x=Matrix.array([
+    #     [2.0, 3.0, -1.0],
+    #     [1.0, 1.0, -1.0],
+    #     [-1.0, 2.0, -3.0],
+    #     [1.0, 2.0, 3.0]
+    # ])
+    # ytarget=Matrix.array([1.0, -1.0, 1.0, 1.0])
+    # nn=FeedForward()
+    # optimizer=SGD(params=nn.parameters(), lr=0.1)
+    # for i in range(1000):
+    #     ypred=nn.forward(x)
+    #     ypred=Matrix.squeeze(ypred, 1)
+    #     loss=MSE(ypred=ypred, ytarget=ytarget)
+    #     optimizer.zero_grad()
+    #     loss.backwards()
+    #     optimizer.step()
+    #     print(i, loss.data)
+    # print(ypred)
 
 if __name__ == "__main__":
     main()
