@@ -75,6 +75,7 @@ class Matrix:
                         number=int(data[i][j].astype(int))
                         product[i][j]=Tensor(number)
                     else: data[i][j]=Tensor(data[i][j])
+        if isinstance(data, np.ndarray): return product
         return cls(data, shape)
 
     @classmethod
@@ -195,5 +196,13 @@ class Matrix:
                 if x[i][j].data>max_tracker:
                     max_tracker=x[i][j].data
         return max_tracker
+    
+    @classmethod
+    def transpose(cls, x):
+        result=cls.zeros((x.shape[1], x.shape[0]))
+        for j, row in zip(range(result.shape[1]), x):
+            for i in range(result.shape[0]):
+                result[i][j]=row[i]
+        return result
 
     

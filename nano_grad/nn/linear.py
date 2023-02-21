@@ -8,6 +8,7 @@ class Linear:
         self.bias=Matrix.normal(size=None, glorot=True)
 
     def __call__(self, x):
+            x=Matrix.transpose(x)
             return Matrix.dot(x, self.weights) + self.bias
 
     def __repr__(self) -> str:

@@ -14,18 +14,19 @@ import numpy as np
 class FeedForward(Network):
     def __init__(self) -> None:
 
-        self.l1=Linear(3, 4)
-        self.l2=Linear(4, 4)
-        self.l3=Linear(4, 1)
+        self.l1=Linear(784, 64)
+        self.l2=Linear(64, 64)
+        self.l3=Linear(64, 64)
+        self.l4=Linear(64, 10)
 
         Network.__init__(self, vars(locals()['self']))
 
     def forward(self, x):
         x1=ReLU(self.l1(x))
         x2=ReLU(self.l2(x1))
-        # x3=Softmax(self.l3(x2))
-        x3=self.l3(x2)
-        return x3
+        x3=ReLU(self.l3(x2))
+        x4=Softmax(self.l4(x3))
+        return x4
 
 
 def main():
@@ -47,7 +48,10 @@ def main():
     y_train=Matrix.array(y_train)
     x_test=Matrix.array(x_test)
     y_test=Matrix.array(y_test)
-    print(data.shape)
+    nn=FeedForward()
+    optimizer=SGD(params=nn.parameters(), lr=0.1)
+    test=nn.forward(x_train)
+    print(test.shape)
     # x=Matrix.array([
     #     [2.0, 3.0, -1.0],
     #     [1.0, 1.0, -1.0],
