@@ -6,7 +6,7 @@ import ctypes
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 # Load the shared library using the constructor syntax for the full path
-lib = ctypes.CDLL('/home/bradenlock83/Projects/NanoGrad/nano_grad/engine/tester.so')
+lib = ctypes.CDLL('/home/bradenlock83/Projects/NanoGrad/cmake/out/nano_grad.so')
 class Foo(object):
     def __init__(self):
         self.obj = lib.Foo_new()
