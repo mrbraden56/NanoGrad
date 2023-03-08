@@ -16,4 +16,4 @@ class Foo(object):
 # Once you have that you can call it like
 
 f = Foo()
-f.bar() #and you will see "Hello" on the screen
+f.bar() #and you will see "Hello" on the screen 
