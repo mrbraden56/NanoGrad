@@ -1,3 +1,0 @@
-/home/bradenlock83/Projects/NanoGrad/cmake/out/CMakeFiles/nano_grad.dir
-/home/bradenlock83/Projects/NanoGrad/cmake/out/CMakeFiles/edit_cache.dir
-/home/bradenlock83/Projects/NanoGrad/cmake/out/CMakeFiles/rebuild_cache.dir

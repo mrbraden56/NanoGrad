@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/nano_grad_backend.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o -o nano_grad_backend   -L/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/../Autograd  -Wl,-rpath,/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/../Autograd -l..//autograd 
