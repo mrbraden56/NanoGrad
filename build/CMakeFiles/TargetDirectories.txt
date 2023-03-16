@@ -1,0 +1,14 @@
+/home/bradenlock83/Projects/NanoGrad/build/CMakeFiles/nano_grad_backend_obj.dir
+/home/bradenlock83/Projects/NanoGrad/build/CMakeFiles/nano_grad_backend.dir
+/home/bradenlock83/Projects/NanoGrad/build/CMakeFiles/nano_grad_backend_shared.dir
+/home/bradenlock83/Projects/NanoGrad/build/CMakeFiles/edit_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/CMakeFiles/rebuild_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/autograd_build/CMakeFiles/autograd.dir
+/home/bradenlock83/Projects/NanoGrad/build/autograd_build/CMakeFiles/edit_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/autograd_build/CMakeFiles/rebuild_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build/CMakeFiles/dispatcher.dir
+/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build/CMakeFiles/edit_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build/CMakeFiles/rebuild_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/tensor_build/CMakeFiles/python_tensor.dir
+/home/bradenlock83/Projects/NanoGrad/build/tensor_build/CMakeFiles/edit_cache.dir
+/home/bradenlock83/Projects/NanoGrad/build/tensor_build/CMakeFiles/rebuild_cache.dir

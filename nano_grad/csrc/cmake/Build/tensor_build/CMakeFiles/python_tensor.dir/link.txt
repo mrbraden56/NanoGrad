@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpython_tensor.a CMakeFiles/python_tensor.dir/python_tensor.cpp.o
+/usr/bin/ranlib libpython_tensor.a

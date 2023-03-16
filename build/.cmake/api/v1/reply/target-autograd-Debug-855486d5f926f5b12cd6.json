@@ -1,0 +1,89 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "autograd_build/libautograd.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "autograd::@d111d6c1f864cd532993",
+	"name" : "autograd",
+	"nameOnDisk" : "libautograd.a",
+	"paths" : 
+	{
+		"build" : "autograd_build",
+		"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/autograd.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/autograd.h",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

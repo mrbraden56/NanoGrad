@@ -1,0 +1,156 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "autograd_build",
+					"jsonFile" : "directory-autograd_build-Debug-68d391dd07883e046252.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "dispatcher_build",
+					"jsonFile" : "directory-dispatcher_build-Debug-7bd1672c7586849f0d41.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "tensor_build",
+					"jsonFile" : "directory-tensor_build-Debug-4187cd6523527b73b002.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "nano_grad_backend",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "autograd::@d111d6c1f864cd532993",
+					"jsonFile" : "target-autograd-Debug-855486d5f926f5b12cd6.json",
+					"name" : "autograd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "dispatcher::@7aa6b5434bec6e0a3f10",
+					"jsonFile" : "target-dispatcher-Debug-5756ef8a0e917bb7985e.json",
+					"name" : "dispatcher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nano_grad_backend::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nano_grad_backend-Debug-4bbd7e7fe38648d5ba8c.json",
+					"name" : "nano_grad_backend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nano_grad_backend_obj-Debug-012401e37b0c21abf923.json",
+					"name" : "nano_grad_backend_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nano_grad_backend_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nano_grad_backend_shared-Debug-56d07f62a222b9a21a8b.json",
+					"name" : "nano_grad_backend_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "python_tensor::@325571700842716e85d0",
+					"jsonFile" : "target-python_tensor-Debug-76c694f5c5c87c5f62d5.json",
+					"name" : "python_tensor",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/bradenlock83/Projects/NanoGrad/build",
+		"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

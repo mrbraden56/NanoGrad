@@ -1,1 +1,1 @@
-add_library(tensor tensor.cpp)
+add_library(python_tensor python_tensor.cpp python_tensor.h)

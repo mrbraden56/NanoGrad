@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named nano_grad_backend_obj
+
+# Build rule for target.
+nano_grad_backend_obj: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nano_grad_backend_obj
+.PHONY : nano_grad_backend_obj
+
+# fast build rule for target.
+nano_grad_backend_obj/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_obj.dir/build.make CMakeFiles/nano_grad_backend_obj.dir/build
+.PHONY : nano_grad_backend_obj/fast
+
+#=============================================================================
 # Target rules for targets named nano_grad_backend
 
 # Build rule for target.
@@ -129,12 +142,64 @@ nano_grad_backend/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/build
 .PHONY : nano_grad_backend/fast
 
+#=============================================================================
+# Target rules for targets named nano_grad_backend_shared
+
+# Build rule for target.
+nano_grad_backend_shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nano_grad_backend_shared
+.PHONY : nano_grad_backend_shared
+
+# fast build rule for target.
+nano_grad_backend_shared/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_shared.dir/build.make CMakeFiles/nano_grad_backend_shared.dir/build
+.PHONY : nano_grad_backend_shared/fast
+
+#=============================================================================
+# Target rules for targets named autograd
+
+# Build rule for target.
+autograd: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 autograd
+.PHONY : autograd
+
+# fast build rule for target.
+autograd/fast:
+	$(MAKE) $(MAKESILENT) -f autograd_build/CMakeFiles/autograd.dir/build.make autograd_build/CMakeFiles/autograd.dir/build
+.PHONY : autograd/fast
+
+#=============================================================================
+# Target rules for targets named dispatcher
+
+# Build rule for target.
+dispatcher: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dispatcher
+.PHONY : dispatcher
+
+# fast build rule for target.
+dispatcher/fast:
+	$(MAKE) $(MAKESILENT) -f dispatcher_build/CMakeFiles/dispatcher.dir/build.make dispatcher_build/CMakeFiles/dispatcher.dir/build
+.PHONY : dispatcher/fast
+
+#=============================================================================
+# Target rules for targets named python_tensor
+
+# Build rule for target.
+python_tensor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 python_tensor
+.PHONY : python_tensor
+
+# fast build rule for target.
+python_tensor/fast:
+	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/build
+.PHONY : python_tensor/fast
+
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.o: home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o
 .PHONY : home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.o
 
 # target to build an object file
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_obj.dir/build.make CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o
 .PHONY : home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o
 
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.i: home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.i
@@ -142,7 +207,7 @@ home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.i: home/bradenlock83/Pro
 
 # target to preprocess a source file
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_obj.dir/build.make CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.i
 .PHONY : home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.i
 
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.s: home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.s
@@ -150,7 +215,7 @@ home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.s: home/bradenlock83/Pro
 
 # target to generate assembly for a file
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_obj.dir/build.make CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.s
 .PHONY : home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.s
 
 # Help Target
@@ -161,7 +226,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... autograd"
+	@echo "... dispatcher"
 	@echo "... nano_grad_backend"
+	@echo "... nano_grad_backend_obj"
+	@echo "... nano_grad_backend_shared"
+	@echo "... python_tensor"
 	@echo "... home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.o"
 	@echo "... home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.i"
 	@echo "... home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.s"

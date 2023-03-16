@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libdispatcher.so -o libdispatcher.so CMakeFiles/dispatcher.dir/dispatcher.cpp.o  /usr/lib/x86_64-linux-gnu/libpython3.10.so 

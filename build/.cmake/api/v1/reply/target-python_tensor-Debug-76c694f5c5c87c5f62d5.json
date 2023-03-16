@@ -1,0 +1,89 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "tensor_build/libpython_tensor.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library"
+		],
+		"files" : 
+		[
+			"/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "python_tensor::@325571700842716e85d0",
+	"name" : "python_tensor",
+	"nameOnDisk" : "libpython_tensor.a",
+	"paths" : 
+	{
+		"build" : "tensor_build",
+		"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

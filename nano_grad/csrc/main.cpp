@@ -4,6 +4,7 @@
 #include "Dispatcher/dispatcher.h"
 
 int main() {
-    std::cout << "Hello, world!" << std::endl;
+    Dispatcher dispatcher;
+    std::cout<<"Im here!\n";
     return 0;
 }

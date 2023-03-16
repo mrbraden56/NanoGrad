@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libnano_grad_backend_shared.so -o libnano_grad_backend_shared.so CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o 

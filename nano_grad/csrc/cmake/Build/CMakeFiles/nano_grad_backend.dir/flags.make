@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/../Autograd
+CXX_INCLUDES = -I/usr/include/python3.10
 
 CXX_FLAGS = 
 

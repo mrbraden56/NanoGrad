@@ -7,6 +7,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/CMakeLists.txt"
+  "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/CMakeLists.txt"
+  "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/CMakeLists.txt"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
@@ -23,6 +26,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.22/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPython/Support.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPython3.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake"
@@ -39,9 +46,17 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "autograd_build/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dispatcher_build/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tensor_build/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/nano_grad_backend_obj.dir/DependInfo.cmake"
   "CMakeFiles/nano_grad_backend.dir/DependInfo.cmake"
+  "CMakeFiles/nano_grad_backend_shared.dir/DependInfo.cmake"
+  "autograd_build/CMakeFiles/autograd.dir/DependInfo.cmake"
+  "dispatcher_build/CMakeFiles/dispatcher.dir/DependInfo.cmake"
+  "tensor_build/CMakeFiles/python_tensor.dir/DependInfo.cmake"
   )
