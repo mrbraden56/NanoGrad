@@ -3,6 +3,32 @@ from nano_grad.engine.tensor import Tensor
 import random
 import numpy as np
 
+
+
+
+class nanopy:
+    """
+
+    Intermediate class to communicate with backend
+
+    """
+    def __init__(self)->None:
+        pass
+    
+    @classmethod
+    def dot(cls, x, y):
+        information={"X":x.shape, "Y":y.shape}
+        print(information)
+
+
+
+
+
+
+
+
+
+
 #TODO: See if there is anything we can do better in terms of design
 class Matrix:
     def __init__(self, data, shape=None, backend="python") -> None:
@@ -88,17 +114,20 @@ class Matrix:
         return cls(weights, shape)
 
     @classmethod
-    def dot(cls, x, y):
-        if x.shape[1]!=y.shape[0]: raise Exception("Incorrect array size for dot product")
-        product=cls.zeros([x.shape[0], y.shape[1]])
-        y_column=[]
-        for row_idx, x_row in enumerate(x.data):
-            for col_idx, j in enumerate(range(y.shape[1])):#col
-                for i in range(y.shape[0]):#row
-                    y_column.append(y[i][j])
-                product[row_idx][col_idx]=cls.sum([r*c for r,c in zip(x_row, y_column)])
-                y_column.clear()
-        return product
+    def dot(cls, x, y, backend):
+        if not backend:
+            if x.shape[1]!=y.shape[0]: raise Exception("Incorrect array size for dot product")
+            product=cls.zeros([x.shape[0], y.shape[1]])
+            y_column=[]
+            for row_idx, x_row in enumerate(x.data):
+                for col_idx, j in enumerate(range(y.shape[1])):#col
+                    for i in range(y.shape[0]):#row
+                        y_column.append(y[i][j])
+                    product[row_idx][col_idx]=cls.sum([r*c for r,c in zip(x_row, y_column)])
+                    y_column.clear()
+            return product
+        if backend:
+            print(x.shape, y.shape)
 
     @classmethod
     def sum(cls, x):
