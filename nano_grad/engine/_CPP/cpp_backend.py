@@ -15,6 +15,6 @@ class CPP:
         x_shp_arr = (ctypes.c_int * len(x.shape))(*(x.shape))
         y_shp_arr = (ctypes.c_int * len(y.shape))(*(y.shape))
 
-        self.dispatcher_lib.receive_python_object_wrapper(x_shp_arr, (len(x.shape)))
-        self.dispatcher_lib.receive_python_object_wrapper(y_shp_arr, (len(y.shape)))
+        self.dispatcher_lib.call_receive_dot_product_shapes.argtypes = [ctypes.POINTER(ctypes.c_int), ctypes.c_int, ctypes.POINTER(ctypes.c_int), ctypes.c_int]
+        self.dispatcher_lib.call_receive_dot_product_shapes(x_shp_arr, (len(x.shape)), y_shp_arr, (len(y.shape)))
 

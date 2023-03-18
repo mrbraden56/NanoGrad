@@ -12,7 +12,7 @@ class Dispatcher {
 public:
     Dispatcher(); // constructor
     void printMessage(); // member function
-    void receive_python_object(int* shape);
+    void receive_dot_product_shapes(int* x_shape, int x_shape_length, int* y_shape, int y_shape_length);
 
 private:
     int example;

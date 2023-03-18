@@ -2,8 +2,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[1]))
 from nano_grad.engine.matrix import Matrix
-from nano_grad.nn.linear import Linear
-from nano_grad.nn.network import Network
+from nano_grad.nn import nn
 from nano_grad.nn.optimizer import SGD
 from nano_grad.nn.loss import MSE
 from nano_grad.nn.activation import ReLU
@@ -13,15 +12,13 @@ import numpy as np
 import ctypes
 from ctypes import py_object
 
-class FeedForward(Network):
+class FeedForward(nn.Network):
     def __init__(self) -> None:
-
-        self.l1=Linear(4, 1)
-
-        Network.__init__(self, vars(locals()['self']))
+        super().__init__(self)
+        self.l1 = self.linear(4, 1)
 
     def forward(self, x):
-        x1=self.l1(x)
+        x1 = self.l1(x)
         return x1
 
 
