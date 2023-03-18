@@ -1,24 +1,26 @@
 import os
 from nano_grad.engine.tensor import Tensor
+from nano_grad.engine._CPP.cpp_backend import CPP
 import random
 import numpy as np
 
 
 
 
-class nanopy:
+class nanopy(CPP):
     """
 
     Intermediate class to communicate with backend
 
     """
     def __init__(self)->None:
+        super().__init__()
         pass
     
     @classmethod
-    def dot(cls, x, y):
-        information={"X":x.shape, "Y":y.shape}
-        print(information)
+    def dot(cls, x: np.ndarray, y: np.ndarray):
+        instance = cls()
+        instance._dot(x, y)
 
 
 

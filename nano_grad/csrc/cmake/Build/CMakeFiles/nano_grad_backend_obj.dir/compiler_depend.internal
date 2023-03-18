@@ -352,4 +352,9 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
  /usr/include/python3.10/cpython/fileutils.h
  /usr/include/python3.10/cpython/pyfpe.h
  /usr/include/python3.10/tracemalloc.h
+ /usr/include/c++/11/vector
+ /usr/include/c++/11/bits/stl_uninitialized.h
+ /usr/include/c++/11/bits/stl_vector.h
+ /usr/include/c++/11/bits/stl_bvector.h
+ /usr/include/c++/11/bits/vector.tcc
 

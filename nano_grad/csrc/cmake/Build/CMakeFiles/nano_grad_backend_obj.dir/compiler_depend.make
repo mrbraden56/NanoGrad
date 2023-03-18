@@ -350,8 +350,19 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/python3.10/fileutils.h \
   /usr/include/python3.10/cpython/fileutils.h \
   /usr/include/python3.10/cpython/pyfpe.h \
-  /usr/include/python3.10/tracemalloc.h
+  /usr/include/python3.10/tracemalloc.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc
 
+
+/usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/c++/11/bits/stl_uninitialized.h:
+
+/usr/include/c++/11/vector:
 
 /usr/include/python3.10/tracemalloc.h:
 
@@ -370,6 +381,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/python3.10/osmodule.h:
 
 /usr/include/python3.10/sysmodule.h:
+
+/usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/python3.10/ceval.h:
 
@@ -502,6 +515,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/c++/11/bits/stl_bvector.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 

@@ -26,16 +26,9 @@ class FeedForward(Network):
 
 
 def main():
-    value="test"
-    dispatcher_lib = ctypes.CDLL('../nano_grad/csrc/cmake/Build/dispatcher_build/libdispatcher.so')
-    dispatcher_lib.receive_python_object_wrapper.argtypes = [py_object]
-    dispatcher_lib.receive_python_object_wrapper.restype = None
-    dispatcher_lib.receive_python_object_wrapper(value)
-
     nn=FeedForward()
     x=np.random.rand(4, 3)
     y=np.array([1, -1, 1, 1])
-    print(x.shape, y.shape)
     ypred=nn.forward(x)
 
 
