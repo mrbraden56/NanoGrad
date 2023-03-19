@@ -6,7 +6,7 @@ class CPP:
     def __init__(self)->None:
         self.dispatcher_lib = ctypes.CDLL('../nano_grad/csrc/cmake/Build/dispatcher_build/libdispatcher.so')
 
-
+    #test
     def _dot(self, x: np.ndarray, y: np.ndarray, instance, device):
         x_shp_arr = (ctypes.c_int * len(x.shape))(*(x.shape))
         y_shp_arr = (ctypes.c_int * len(y.shape))(*(y.shape))
