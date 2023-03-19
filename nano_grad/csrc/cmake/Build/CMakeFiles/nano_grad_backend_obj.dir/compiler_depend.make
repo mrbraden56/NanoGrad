@@ -183,7 +183,6 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/bits/istream.tcc \
   /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/autograd.h \
   /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h \
-  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h \
   /usr/include/python3.10/Python.h \
   /usr/include/python3.10/patchlevel.h \
   /usr/include/python3.10/pyconfig.h \
@@ -355,8 +354,11 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc
+  /usr/include/c++/11/bits/vector.tcc \
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h
 
+
+/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h:
 
 /usr/include/c++/11/bits/vector.tcc:
 
@@ -474,8 +476,6 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 
 /usr/include/python3.10/pymath.h:
 
-/usr/include/python3.10/exports.h:
-
 /usr/include/python3.10/cpython/sysmodule.h:
 
 /usr/include/c++/11/bits/stl_construct.h:
@@ -533,6 +533,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/pthread.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
+
+/usr/include/python3.10/exports.h:
 
 /usr/include/c++/11/bits/ios_base.h:
 
@@ -931,8 +933,6 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/limits.h:
 
 /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/autograd.h:
-
-/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h:
 
 /usr/include/python3.10/funcobject.h:
 

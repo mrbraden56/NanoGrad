@@ -4,7 +4,10 @@ Dispatcher::Dispatcher(){
     // constructor implementation
 }
 
-void Dispatcher::receive_dot_product_shapes(int* x_shape, int x_shape_length, int* y_shape, int y_shape_length){
+void Dispatcher::receive_dot_product_shapes(int* x_shape, int x_shape_length, int* y_shape, int y_shape_length, int* python_object){
+    PyObject* obj = reinterpret_cast<PyObject*>(*python_object);
+    std::cout<<obj<<"\n";
+
     std::vector<int> x_shape_vec;
     for (int i = 0; i < x_shape_length; i++) {
         x_shape_vec.push_back(x_shape[i]);
@@ -29,7 +32,7 @@ void Dispatcher::receive_dot_product_shapes(int* x_shape, int x_shape_length, in
     std::cout<<"\n";
 }
 
-extern "C" void call_receive_dot_product_shapes(int* x_shape, int x_shape_length, int* y_shape, int y_shape_length) {
+extern "C" void call_receive_dot_product_shapes(int* x_shape, int x_shape_length, int* y_shape, int y_shape_length, int* python_object) {
     static Dispatcher dispatcher;
-    dispatcher.receive_dot_product_shapes(x_shape, x_shape_length, y_shape, y_shape_length);
+    dispatcher.receive_dot_product_shapes(x_shape, x_shape_length, y_shape, y_shape_length, python_object);
 }

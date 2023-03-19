@@ -1,1 +1,5 @@
-//TODO: This is where the hand off occurs to give c++ a python object
+#include "python_tensor.h"
+
+Tensor::Tensor(){
+    // constructor implementation
+}

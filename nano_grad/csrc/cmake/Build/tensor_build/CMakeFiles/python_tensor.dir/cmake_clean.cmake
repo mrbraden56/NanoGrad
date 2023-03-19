@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/python_tensor.dir/python_tensor.cpp.o"
   "CMakeFiles/python_tensor.dir/python_tensor.cpp.o.d"
-  "libpython_tensor.a"
   "libpython_tensor.pdb"
+  "libpython_tensor.so"
 )
 
 # Per-language clean rules from dependency scanning.

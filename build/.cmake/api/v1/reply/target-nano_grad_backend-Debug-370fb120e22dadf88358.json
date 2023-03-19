@@ -91,11 +91,11 @@
 			"id" : "dispatcher::@7aa6b5434bec6e0a3f10"
 		},
 		{
-			"backtrace" : 7,
-			"id" : "python_tensor::@325571700842716e85d0"
+			"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df"
+			"backtrace" : 7,
+			"id" : "python_tensor::@325571700842716e85d0"
 		}
 	],
 	"id" : "nano_grad_backend::@6890427a1f51a3e7e1df",
@@ -127,7 +127,7 @@
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd:/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher:/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor:/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build",
+				"fragment" : "-Wl,-rpath,/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd:/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher:/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor:/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build:/home/bradenlock83/Projects/NanoGrad/build/tensor_build",
 				"role" : "libraries"
 			},
 			{
@@ -142,7 +142,7 @@
 			},
 			{
 				"backtrace" : 7,
-				"fragment" : "tensor_build/libpython_tensor.a",
+				"fragment" : "tensor_build/libpython_tensor.so",
 				"role" : "libraries"
 			},
 			{
