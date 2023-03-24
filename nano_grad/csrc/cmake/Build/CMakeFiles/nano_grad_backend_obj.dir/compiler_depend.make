@@ -355,8 +355,31 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/bits/erase_if.h
 
+
+/usr/include/c++/11/bits/stl_multimap.h:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/c++/11/tuple:
+
+/usr/include/c++/11/bits/stl_map.h:
+
+/usr/include/c++/11/map:
 
 /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h:
 
@@ -409,6 +432,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/python3.10/cpython/pytime.h:
 
 /usr/include/python3.10/weakrefobject.h:
+
+/usr/include/c++/11/bits/stl_tree.h:
 
 /usr/include/python3.10/genericaliasobject.h:
 
@@ -473,6 +498,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/python3.10/cpython/pythonrun.h:
 
 /usr/include/python3.10/cpython/objimpl.h:
+
+/usr/include/c++/11/bits/invoke.h:
 
 /usr/include/python3.10/pymath.h:
 
@@ -824,7 +851,11 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 
 /usr/include/c++/11/math.h:
 
+/usr/include/c++/11/ext/aligned_buffer.h:
+
 /usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/c++/11/bits/erase_if.h:
 
 /usr/include/python3.10/cpython/ceval.h:
 
@@ -884,11 +915,15 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
+/usr/include/c++/11/bits/node_handle.h:
+
 /usr/include/c++/11/iostream:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/c++/11/system_error:
+
+/usr/include/c++/11/utility:
 
 /usr/include/python3.10/enumobject.h:
 
@@ -929,6 +964,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/python3.10/cpython/object.h:
 
 /usr/include/c++/11/bits/istream.tcc:
+
+/usr/include/c++/11/bits/stl_relops.h:
 
 /usr/include/limits.h:
 
@@ -1037,6 +1074,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/bits/specfun.h:
 
 /usr/include/c++/11/limits:
+
+/usr/include/c++/11/array:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 

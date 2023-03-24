@@ -11,10 +11,14 @@
 class Tensor {
 public:
     Tensor(); // constructor
+    double* dot(double* x, int* y_shape);
+
 
 
 private:
     int example;
+    PyObject* instance;
+
 };
 
 #endif

@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libpython_tensor_target.so -o libpython_tensor_target.so CMakeFiles/python_tensor_target.dir/python_tensor.cpp.o  /usr/lib/x86_64-linux-gnu/libpython3.10.so 
