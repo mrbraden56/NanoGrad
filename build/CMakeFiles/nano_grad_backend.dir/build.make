@@ -79,8 +79,8 @@ nano_grad_backend_EXTERNAL_OBJECTS = \
 nano_grad_backend: CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o
 nano_grad_backend: CMakeFiles/nano_grad_backend.dir/build.make
 nano_grad_backend: autograd_build/libautograd.a
-nano_grad_backend: dispatcher_build/libdispatcher.so
-nano_grad_backend: tensor_build/libpython_tensor.so
+nano_grad_backend: dispatcher_build/libdispatcher.a
+nano_grad_backend: tensor_build/libpython_tensor.a
 nano_grad_backend: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 nano_grad_backend: CMakeFiles/nano_grad_backend.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bradenlock83/Projects/NanoGrad/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX executable nano_grad_backend"

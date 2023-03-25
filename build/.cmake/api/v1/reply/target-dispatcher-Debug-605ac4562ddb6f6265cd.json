@@ -1,8 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o"
+			"path" : "dispatcher_build/libdispatcher.a"
 		}
 	],
 	"backtrace" : 1,
@@ -15,7 +16,7 @@
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -25,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 7,
 				"parent" : 0
 			}
 		]
@@ -42,7 +43,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fPIC"
+					"fragment" : "-g"
 				}
 			],
 			"includes" : 
@@ -59,12 +60,13 @@
 			]
 		}
 	],
-	"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df",
-	"name" : "nano_grad_backend_obj",
+	"id" : "dispatcher::@7aa6b5434bec6e0a3f10",
+	"name" : "dispatcher",
+	"nameOnDisk" : "libdispatcher.a",
 	"paths" : 
 	{
-		"build" : ".",
-		"source" : "."
+		"build" : "dispatcher_build",
+		"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher"
 	},
 	"sourceGroups" : 
 	[
@@ -74,6 +76,13 @@
 			[
 				0
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
 		}
 	],
 	"sources" : 
@@ -81,9 +90,14 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp",
+			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h",
+			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "OBJECT_LIBRARY"
+	"type" : "STATIC_LIBRARY"
 }

@@ -18,16 +18,13 @@ add_subdirectory(${SRC_DIR}/Autograd autograd_build)
 add_subdirectory(${SRC_DIR}/Dispatcher dispatcher_build)
 add_subdirectory(${SRC_DIR}/Tensor tensor_build)
 
-target_link_libraries(${PROJECT_NAME} autograd)
-target_link_libraries(${PROJECT_NAME} dispatcher)
-target_link_libraries(${PROJECT_NAME} python_tensor)
+target_link_libraries(${PROJECT_NAME} autograd dispatcher python_tensor)
 
-target_link_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Autograd)
-target_link_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Dispatcher)
-target_link_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Tensor)
+
+target_link_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Autograd ${SRC_DIR}/Dispatcher ${SRC_DIR}/Tensor)
+
 
 # Add the Python include directories for the object file and executable targets
 target_include_directories(${PROJECT_NAME}_obj PRIVATE ${Python3_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${Python3_INCLUDE_DIRS})
-
 target_link_libraries(${PROJECT_NAME} ${Python3_LIBRARIES})

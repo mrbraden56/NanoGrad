@@ -11,12 +11,12 @@
 },
 {
   "directory": "/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build",
-  "command": "/usr/bin/g++ -Ddispatcher_EXPORTS -I/usr/include/python3.10 -g -fPIC -o CMakeFiles/dispatcher.dir/dispatcher.cpp.o -c /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/python3.10 -g -o CMakeFiles/dispatcher.dir/dispatcher.cpp.o -c /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.cpp",
   "file": "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.cpp"
 },
 {
   "directory": "/home/bradenlock83/Projects/NanoGrad/build/tensor_build",
-  "command": "/usr/bin/g++ -Dpython_tensor_EXPORTS -I/usr/include/python3.10 -g -fPIC -o CMakeFiles/python_tensor.dir/python_tensor.cpp.o -c /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/python3.10 -g -o CMakeFiles/python_tensor.dir/python_tensor.cpp.o -c /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.cpp",
   "file": "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.cpp"
 }
 ]

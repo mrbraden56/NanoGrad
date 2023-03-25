@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dispatcher.dir/dispatcher.cpp.o"
   "CMakeFiles/dispatcher.dir/dispatcher.cpp.o.d"
+  "libdispatcher.a"
   "libdispatcher.pdb"
-  "libdispatcher.so"
 )
 
 # Per-language clean rules from dependency scanning.
