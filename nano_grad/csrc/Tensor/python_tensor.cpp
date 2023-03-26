@@ -4,6 +4,6 @@ Tensor::Tensor(){
     // constructor implementation
 }
 
-double* Tensor::dot(double* x, int* y_shape){
-    std::cout<<"In here!\n";
+void Tensor::dot(){
+    std::cout<<"In python_tensor class!\n";
 }

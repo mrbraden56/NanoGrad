@@ -32,10 +32,11 @@ void Dispatcher::receive_dot_product(double* x_array, int* x_shape, int* y_shape
     //if py_obj exists call that 
     if(this->instances.find(instance)==this->instances.end()){
         std::cout<<"Instance does not exist, creating one\n";
-        instances[instance]="test1";
+        instances.insert(std::make_pair(instance, Tensor()));
     }
     else{
         std::cout<<"Instance does exist\n";
+        instances[instance].dot();
     }
 }
 

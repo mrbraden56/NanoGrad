@@ -21,7 +21,7 @@ public:
                              int* python_object);
 
 private:
-    std::map<PyObject*, std::string> instances;
+    std::map<PyObject*, Tensor> instances;
 };
 
 #endif

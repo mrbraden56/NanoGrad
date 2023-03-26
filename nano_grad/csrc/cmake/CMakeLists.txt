@@ -21,9 +21,6 @@ target_link_libraries(${PROJECT_NAME} autograd dispatcher python_tensor)
 target_link_libraries(${PROJECT_NAME}_shared autograd dispatcher python_tensor)
 
 
-# target_link_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Autograd ${SRC_DIR}/Dispatcher ${SRC_DIR}/Tensor)
-
-
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 target_include_directories(${PROJECT_NAME}_obj PRIVATE ${Python3_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${Python3_INCLUDE_DIRS})

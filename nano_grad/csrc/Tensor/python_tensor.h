@@ -11,7 +11,8 @@
 class Tensor {
 public:
     Tensor(); // constructor
-    double* dot(double* x, int* y_shape);
+    // double* dot(double* x, int* y_shape);
+    void dot();
 
 
 

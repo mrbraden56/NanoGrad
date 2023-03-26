@@ -4,7 +4,7 @@ import numpy as np
 
 class CPP:
     def __init__(self)->None:
-        self.dispatcher_lib = ctypes.CDLL('../nano_grad/csrc/cmake/Build/dispatcher_build/libdispatcher.so')
+        self.dispatcher_lib = ctypes.CDLL('../nano_grad/csrc/cmake/Build/libnano_grad_backend_shared.so')
 
     #test
     def _dot(self, x: np.ndarray, y: np.ndarray, instance, device):
