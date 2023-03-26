@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libnano_grad_backend_shared.so -o libnano_grad_backend_shared.so CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o 
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libnano_grad_backend_shared.so -o libnano_grad_backend_shared.so CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o  autograd_build/libautograd.a dispatcher_build/libdispatcher.a tensor_build/libpython_tensor.a /usr/lib/x86_64-linux-gnu/libpython3.10.so 

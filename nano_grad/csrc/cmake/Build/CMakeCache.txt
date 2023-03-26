@@ -228,6 +228,15 @@ PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.10.so
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 
 //Value Computed by CMake
+Tensor_BINARY_DIR:STATIC=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/tensor_build
+
+//Value Computed by CMake
+Tensor_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Tensor_SOURCE_DIR:STATIC=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor
+
+//Value Computed by CMake
 nano_grad_backend_BINARY_DIR:STATIC=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build
 
 //Value Computed by CMake

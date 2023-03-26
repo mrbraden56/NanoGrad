@@ -209,6 +209,15 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Tensor_BINARY_DIR:STATIC=/home/bradenlock83/Projects/NanoGrad/build/tensor_build
+
+//Value Computed by CMake
+Tensor_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Tensor_SOURCE_DIR:STATIC=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor
+
+//Value Computed by CMake
 nano_grad_backend_BINARY_DIR:STATIC=/home/bradenlock83/Projects/NanoGrad/build
 
 //Value Computed by CMake

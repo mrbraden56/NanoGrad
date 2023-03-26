@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/usr/include/python3.10
 
-CXX_FLAGS = -g
+CXX_FLAGS = -g -fPIC
 

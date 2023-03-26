@@ -368,7 +368,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/c++/11/bits/erase_if.h
+  /usr/include/c++/11/bits/erase_if.h \
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h
 
 
 /usr/include/c++/11/bits/stl_multimap.h:
