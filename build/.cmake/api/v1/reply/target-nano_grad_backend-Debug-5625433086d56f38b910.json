@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libnano_grad_backend_shared.so"
+			"path" : "nano_grad_backend"
 		}
 	],
 	"backtrace" : 1,
@@ -10,9 +10,10 @@
 	{
 		"commands" : 
 		[
-			"add_library",
+			"add_executable",
 			"target_link_libraries",
-			"include_directories"
+			"include_directories",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -26,13 +27,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 21,
+				"line" : 20,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 27,
 				"parent" : 0
 			},
 			{
@@ -46,6 +53,12 @@
 				"file" : 0,
 				"line" : 18,
 				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 0
 			}
 		]
 	},
@@ -56,7 +69,7 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "python_tensor::@325571700842716e85d0"
+			"id" : "dispatcher::@7aa6b5434bec6e0a3f10"
 		},
 		{
 			"backtrace" : 2,
@@ -64,14 +77,18 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "dispatcher::@7aa6b5434bec6e0a3f10"
+			"id" : "python_tensor::@325571700842716e85d0"
 		}
 	],
-	"id" : "nano_grad_backend_shared::@6890427a1f51a3e7e1df",
+	"id" : "nano_grad_backend::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -92,14 +109,15 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 3,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libpython3.10.so",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "nano_grad_backend_shared",
-	"nameOnDisk" : "libnano_grad_backend_shared.so",
+	"name" : "nano_grad_backend",
+	"nameOnDisk" : "nano_grad_backend",
 	"paths" : 
 	{
 		"build" : ".",
@@ -124,5 +142,5 @@
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

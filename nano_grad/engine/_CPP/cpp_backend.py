@@ -11,8 +11,12 @@ class CPP:
         x_pointer=x.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
         shape_list = [x.shape[0], x.shape[1]]
         x_shape_ptr = (ctypes.c_int * len(shape_list))(*shape_list)
-        y_shp_arr = (ctypes.c_int * len(y.shape))(*(y.shape))
-
+        
+        
+        y_pointer=y.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
+        shape_list = [y.shape[0], y.shape[1]]
+        y_shape_ptr = (ctypes.c_int * len(shape_list))(*shape_list)
+        
         #this keeps the reference count of Python above 0 so the garbage collector doesnt
         #consume this object while c++ is using it
         instance_py_object=ctypes.py_object(instance)
@@ -20,15 +24,15 @@ class CPP:
         c_type_instance_address=ctypes.c_int(instance_address)
 
         self.dispatcher_lib.call_receive_dot_product.argtypes = [ctypes.POINTER(ctypes.c_double), 
-                                                                        ctypes.POINTER(ctypes.c_int), 
-                                                                        ctypes.POINTER(ctypes.c_int), 
-                                                                        ctypes.c_int, 
-                                                                        ctypes.POINTER(ctypes.c_int)]
+                                                                ctypes.POINTER(ctypes.c_int), 
+                                                                ctypes.POINTER(ctypes.c_double), 
+                                                                ctypes.POINTER(ctypes.c_int), 
+                                                                ctypes.POINTER(ctypes.c_int)]
         self.dispatcher_lib.call_receive_dot_product(x_pointer, 
-                                                            x_shape_ptr, 
-                                                            y_shp_arr, 
-                                                            (len(y.shape)),
-                                                            ctypes.byref(c_type_instance_address)
-                                                            )
+                                                        x_shape_ptr, 
+                                                        y_pointer, 
+                                                        y_shape_ptr,
+                                                        ctypes.byref(c_type_instance_address)
+                                                        )
                                                             
 
