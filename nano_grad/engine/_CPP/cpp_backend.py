@@ -12,7 +12,7 @@ class CPP:
         shape_list = [x.shape[0], x.shape[1]]
         x_shape_ptr = (ctypes.c_int * len(shape_list))(*shape_list)
         
-        
+        print(y)
         y_pointer=y.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
         shape_list = [y.shape[0], y.shape[1]]
         y_shape_ptr = (ctypes.c_int * len(shape_list))(*shape_list)
