@@ -14,7 +14,7 @@ class Dispatcher {
 public:
     Dispatcher(); // constructor
     void printMessage(); // member function
-    void receive_dot_product(double* x_array, 
+    double* receive_dot_product(double* x_array, 
                              int* x_shape, 
                              double* y_array, 
                              int* y_shape,

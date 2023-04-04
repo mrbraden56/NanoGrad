@@ -12,7 +12,6 @@ class CPP:
         shape_list = [x.shape[0], x.shape[1]]
         x_shape_ptr = (ctypes.c_int * len(shape_list))(*shape_list)
         
-        print(y)
         y_pointer=y.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
         shape_list = [y.shape[0], y.shape[1]]
         y_shape_ptr = (ctypes.c_int * len(shape_list))(*shape_list)
@@ -28,11 +27,14 @@ class CPP:
                                                                 ctypes.POINTER(ctypes.c_double), 
                                                                 ctypes.POINTER(ctypes.c_int), 
                                                                 ctypes.POINTER(ctypes.c_int)]
-        self.dispatcher_lib.call_receive_dot_product(x_pointer, 
+        pointer = self.dispatcher_lib.call_receive_dot_product(x_pointer, 
                                                         x_shape_ptr, 
                                                         y_pointer, 
                                                         y_shape_ptr,
                                                         ctypes.byref(c_type_instance_address)
                                                         )
+        result = np.ctypeslib.as_array(pointer, shape=(4,1))
+        print(result)
+
                                                             
 

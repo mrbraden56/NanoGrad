@@ -31,8 +31,8 @@ double* Tensor::dot(double* x_array, int* x_shape, double* y_array, int* y_shape
     int z_rows=x_shape[0];
     int z_cols=y_shape[1];
     double* z= new double[z_rows*z_cols];
-    for (int i = 0; i < z_rows; i++) {
-        for (int j = 0; j < z_cols; j++) {
+    for (int i = 0; i < x_rows; i++) {
+        for (int j = 0; j < y_cols; j++) {
             int z_index=j * z_cols + i;
             z[z_index] = 0;
         }
@@ -46,31 +46,38 @@ double* Tensor::dot(double* x_array, int* x_shape, double* y_array, int* y_shape
     // z[3]=(x[0]*y[2]) + (x[0 * x_cols + 0]*y[3])
     // ...
     // z[6]=(x[0]*y[4]) + (x[0 * x_cols + 0]*y[5])
-    for(int j=0; j<y_cols; j++){
-        for(int i=0; i<x_rows; i++){
-            z[j * z_cols + i]=(x[i]*y[j]) + ()
+
+    int lead_dim_A=x_shape[0];
+    int lead_dim_B=y_shape[0];
+    int lead_dim_C=z_rows;
+    for (int i = 0; i < x_rows; i++) {
+        for (int j = 0; j < y_cols; j++) {
+            std::cout<<z[j * z_cols + i]<<"\n";
         }
     }
-
-
-
-
-    int y_column_counter=0;
-    for(int k=0; k<z_rows*z_cols; k++){
-        for(int i=0; i<y_cols; i++){
-            for (int j = 0; j < x_rows*x_cols; j++) {
-                std::unique_ptr<double[]> x_vector(new double[x_rows]);
-                if(j%x_rows==0){
-                    y_column_counter++;
-                }
-
-                z[k]=x[j]*y[y_column_counter] + z[j];
-            }
+    MyGemm(x_shape[0], y_shape[1], x_shape[1], x, lead_dim_A, y, lead_dim_B, z, lead_dim_C);
+    for (int i = 0; i < x_rows; i++) {
+        for (int j = 0; j < y_cols; j++) {
+            std::cout<<z[j * z_cols + i]<<"\n";
         }
-    } 
-
+    }
+    return z;
 }
 
-double* Tensor::matrix_vector(double* x, double* y){
+void Tensor::MyGemm(int m, int n, int k, double *A, int ldA, double *B, int ldB, double *C, int ldC ){
+for ( int j=0; j<n; j++ ){
+    MyGemv( m, k, A, ldA, &B[ (0)*ldB + j ], 1, &C[ (0)*ldC + j ], 1 );
+}
+}
 
+void Tensor::MyGemv(int m, int n, double *A, int ldA, double *x, int incx, double *y, int incy){
+    for ( int j=0; j<n; j++ ){
+        Axpy( m, x[ (j)*incx ] , &A[ (0)*ldA + j ], 1, y, incy );
+    }
+}
+
+void Tensor::Axpy(int n, double alpha, double *x, int incx, double *y, int incy){
+    for ( int i=0; i<n; i++ ){
+        y[ (i)*incy ]  += alpha * x[ (i)*incx ];   // Fused Multiply-Add
+    }
 }

@@ -12,12 +12,18 @@ class Tensor {
 public:
     Tensor(); // constructor
     double* dot(double* x_array, int* x_shape, double* y_array, int* y_shape);
-    double* matrix_vector(double* x, double* y);
 
 
 private:
     int example;
     PyObject* instance;
+    void MyGemm(int m, int n, int k,
+	     double *A, int ldA,
+	     double *B, int ldB,
+	     double *C, int ldC );
+    void MyGemv(int m, int n, double *A, int ldA,
+           double *x, int incx, double *y, int incy);
+    void Axpy(int n, double alpha, double *x, int incx, double *y, int incy);
 
 };
 
