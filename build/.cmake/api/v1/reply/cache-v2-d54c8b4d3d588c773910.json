@@ -1127,7 +1127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/home/bradenlock83/Environments/NanoGrad/bin/python3.10][/usr/include/python3.10][/usr/lib/x86_64-linux-gnu/libpython3.10.so][cfound components: Interpreter Development Development.Module Development.Embed ][v3.10.6()]"
+			"value" : "[/home/bradenlock83/Environments/NanoGrad/bin/python3.10][/usr/include/python3.10][/usr/lib/x86_64-linux-gnu/libpython3.10.so][/home/bradenlock83/Environments/NanoGrad/lib/python3.10/site-packages/numpy/core/include][cfound components: Interpreter Development NumPy Development.Module Development.Embed ][v3.10.6()]"
 		},
 		{
 			"name" : "Tensor_BINARY_DIR",
@@ -1248,6 +1248,30 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "/usr/lib/x86_64-linux-gnu/libpython3.10.so"
+		},
+		{
+			"name" : "_Python3_NUMPY_SIGNATURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "2391f37b2af83492c89addeddb811037"
+		},
+		{
+			"name" : "_Python3_NumPy_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/bradenlock83/Environments/NanoGrad/lib/python3.10/site-packages/numpy/core/include"
 		},
 		{
 			"name" : "nano_grad_backend_BINARY_DIR",

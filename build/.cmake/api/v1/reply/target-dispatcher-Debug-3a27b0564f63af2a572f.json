@@ -34,6 +34,12 @@
 				"file" : 0,
 				"line" : 8,
 				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
 			}
 		]
 	},
@@ -51,6 +57,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/usr/include/python3.10"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/home/bradenlock83/Environments/NanoGrad/lib/python3.10/site-packages/numpy/core/include"
 				}
 			],
 			"language" : "CXX",

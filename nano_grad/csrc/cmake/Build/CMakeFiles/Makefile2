@@ -161,9 +161,9 @@ CMakeFiles/nano_grad_backend_obj.dir/clean:
 # Target rules for target CMakeFiles/nano_grad_backend.dir
 
 # All Build rule for target.
-CMakeFiles/nano_grad_backend.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 CMakeFiles/nano_grad_backend.dir/all: tensor_build/CMakeFiles/python_tensor.dir/all
 CMakeFiles/nano_grad_backend.dir/all: dispatcher_build/CMakeFiles/dispatcher.dir/all
+CMakeFiles/nano_grad_backend.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 CMakeFiles/nano_grad_backend.dir/all: autograd_build/CMakeFiles/autograd.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/build
@@ -190,9 +190,9 @@ CMakeFiles/nano_grad_backend.dir/clean:
 # Target rules for target CMakeFiles/nano_grad_backend_shared.dir
 
 # All Build rule for target.
-CMakeFiles/nano_grad_backend_shared.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 CMakeFiles/nano_grad_backend_shared.dir/all: tensor_build/CMakeFiles/python_tensor.dir/all
 CMakeFiles/nano_grad_backend_shared.dir/all: dispatcher_build/CMakeFiles/dispatcher.dir/all
+CMakeFiles/nano_grad_backend_shared.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 CMakeFiles/nano_grad_backend_shared.dir/all: autograd_build/CMakeFiles/autograd.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_shared.dir/build.make CMakeFiles/nano_grad_backend_shared.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_shared.dir/build.make CMakeFiles/nano_grad_backend_shared.dir/build

@@ -396,7 +396,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/usr/include/python3.10][/usr/lib/x86_64-linux-gnu/libpython3.10.so][cfound components: Development Development.Module Development.Embed ][v3.10.6()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/bradenlock83/Environments/NanoGrad/bin/python3.10][/usr/include/python3.10][/usr/lib/x86_64-linux-gnu/libpython3.10.so][cfound components: Interpreter Development Development.Module Development.Embed ][v3.10.6()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/bradenlock83/Environments/NanoGrad/bin/python3.10][/usr/include/python3.10][/usr/lib/x86_64-linux-gnu/libpython3.10.so][/home/bradenlock83/Environments/NanoGrad/lib/python3.10/site-packages/numpy/core/include][cfound components: Interpreter Development NumPy Development.Module Development.Embed ][v3.10.6()]
 //Details about finding PythonLibs
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython3.10.so][/usr/include/python3.10][v3.10.6()]
 //ADVANCED property for variable: PYTHON_INCLUDE_DIR
@@ -415,6 +415,9 @@ _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;6;64;;cpython-310-x86_64-li
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=9404f87465d837f6148294c094cc4fa1
 //Path to a library.
 _Python3_LIBRARY_RELEASE:INTERNAL=/usr/lib/x86_64-linux-gnu/libpython3.10.so
+_Python3_NUMPY_SIGNATURE:INTERNAL=2391f37b2af83492c89addeddb811037
+//Path to a file.
+_Python3_NumPy_INCLUDE_DIR:INTERNAL=/home/bradenlock83/Environments/NanoGrad/lib/python3.10/site-packages/numpy/core/include
 //Path to a program.
 _Python_CONFIG:INTERNAL=/usr/bin/x86_64-linux-gnu-python3.10-config
 _Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=dda1c5a898074ddd86cc57d4f1aa6e4f

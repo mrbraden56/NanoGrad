@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/python3.10
+CXX_INCLUDES = -I/usr/include/python3.10 -I/home/bradenlock83/Environments/NanoGrad/lib/python3.10/site-packages/numpy/core/include
 
 CXX_FLAGS = -g -fPIC
 
