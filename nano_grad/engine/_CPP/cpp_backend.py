@@ -42,7 +42,7 @@ class CPP:
                                                         )
         
         result_array = as_array(pointer, shape=(x.shape[0],))
-
+        print(np.matmul(x, y), "Numpy")
         return result_array
                                                             
 
