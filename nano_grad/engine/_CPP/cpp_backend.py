@@ -1,6 +1,10 @@
 import ctypes
 from ctypes import py_object
 import numpy as np
+from numpy.ctypeslib import ndpointer
+from numpy.ctypeslib import as_array
+
+
 
 class CPP:
     def __init__(self)->None:
@@ -27,12 +31,18 @@ class CPP:
                                                                 ctypes.POINTER(ctypes.c_double), 
                                                                 ctypes.POINTER(ctypes.c_int), 
                                                                 ctypes.POINTER(ctypes.c_int)]
+        
+        self.dispatcher_lib.call_receive_dot_product.restype = ctypes.POINTER(ctypes.c_double)
+
         pointer = self.dispatcher_lib.call_receive_dot_product(x_pointer, 
                                                         x_shape_ptr, 
                                                         y_pointer, 
                                                         y_shape_ptr,
                                                         ctypes.byref(c_type_instance_address)
                                                         )
-        print(pointer)
+        
+        result_array = as_array(pointer, shape=(x.shape[0],))
+
+        return result_array
                                                             
 

@@ -27,6 +27,8 @@ def main():
     x=np.random.rand(4, 3)
     y=np.array([1, -1, 1, 1])
     ypred=nn.forward(x)
+    print("In main")
+    print(ypred)
 
 
     # data=pd.read_csv('C:/Users/brade/Research/nano_grad/examples/data/train.csv')

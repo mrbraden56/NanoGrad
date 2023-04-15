@@ -19,7 +19,7 @@ class nanopy(CPP):
     
     @classmethod
     def dot(cls, x: np.ndarray, y: np.ndarray, network_instance=None, device="cpu"):
-        cls()._dot(x, y, network_instance, device)
+        return cls()._dot(x, y, network_instance, device)
 
 
 
