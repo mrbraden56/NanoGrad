@@ -20,21 +20,3 @@ double* Tensor::dot(double* x_array, int* x_shape, double* y_array, int* y_shape
 
     return z;
 }
-
-void Tensor::MyGemm(int m, int n, int k, double *A, int ldA, double *B, int ldB, double *C, int ldC ){
-for ( int j=0; j<n; j++ ){
-    MyGemv( m, k, A, ldA, &B[ (0)*ldB + j ], 1, &C[ (0)*ldC + j ], 1 );
-}
-}
-
-void Tensor::MyGemv(int m, int n, double *A, int ldA, double *x, int incx, double *y, int incy){
-    for ( int j=0; j<n; j++ ){
-        Axpy( m, x[ (j)*incx ] , &A[ (0)*ldA + j ], 1, y, incy );
-    }
-}
-
-void Tensor::Axpy(int n, double alpha, double *x, int incx, double *y, int incy){
-    for ( int i=0; i<n; i++ ){
-        y[ (i)*incy ]  += alpha * x[ (i)*incx ];   // Fused Multiply-Add
-    }
-}

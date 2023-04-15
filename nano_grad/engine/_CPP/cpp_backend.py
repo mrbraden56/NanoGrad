@@ -41,8 +41,7 @@ class CPP:
                                                         ctypes.byref(c_type_instance_address)
                                                         )
         
-        result_array = as_array(pointer, shape=(x.shape[0],))
-        print(np.matmul(x, y), "Numpy")
+        result_array = as_array(pointer, shape=(x.shape[0], y.shape[1]))
         return result_array
                                                             
 
