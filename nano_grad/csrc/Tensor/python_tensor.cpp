@@ -61,6 +61,7 @@ double* Tensor::dot(double* x_array, int* x_shape, double* y_array, int* y_shape
             std::cout<<z[j * z_cols + i]<<"\n";
         }
     }
+    std::cout<<"Size: "<<sizeof(z) / sizeof(z[0])<<"\n";
     return z;
 }
 

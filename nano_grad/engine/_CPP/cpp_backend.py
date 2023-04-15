@@ -33,10 +33,6 @@ class CPP:
                                                         y_shape_ptr,
                                                         ctypes.byref(c_type_instance_address)
                                                         )
-        pointer = ctypes.POINTER(ctypes.c_double)(pointer)
-        array = np.ctypeslib.as_array(pointer.contents, shape=(4,1))
-        column_major_array = np.array(array, order='F', copy=False)
-        print(column_major_array)
-
+        print(pointer)
                                                             
 
