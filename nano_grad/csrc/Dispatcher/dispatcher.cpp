@@ -9,7 +9,7 @@ double* Dispatcher::receive_dot_product(double* x_array, int* x_shape, double* y
     double* output;
 
     if(this->instances.find(instance)==this->instances.end()){
-        instances.insert(std::make_pair(instance, Tensor()));
+        instances.insert(std::make_pair(instance, Ops()));
         output = instances[instance].dot(x_array, x_shape, y_array, y_shape);
     }
     else{

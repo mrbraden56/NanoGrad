@@ -182,17 +182,30 @@ dispatcher/fast:
 .PHONY : dispatcher/fast
 
 #=============================================================================
-# Target rules for targets named python_tensor
+# Target rules for targets named ops
 
 # Build rule for target.
-python_tensor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 python_tensor
-.PHONY : python_tensor
+ops: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ops
+.PHONY : ops
 
 # fast build rule for target.
-python_tensor/fast:
-	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/build
-.PHONY : python_tensor/fast
+ops/fast:
+	$(MAKE) $(MAKESILENT) -f ops_build/CMakeFiles/ops.dir/build.make ops_build/CMakeFiles/ops.dir/build
+.PHONY : ops/fast
+
+#=============================================================================
+# Target rules for targets named tensor
+
+# Build rule for target.
+tensor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tensor
+.PHONY : tensor
+
+# fast build rule for target.
+tensor/fast:
+	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/build
+.PHONY : tensor/fast
 
 home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.o: home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.cpp.o
 .PHONY : home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.o
@@ -231,7 +244,8 @@ help:
 	@echo "... nano_grad_backend"
 	@echo "... nano_grad_backend_obj"
 	@echo "... nano_grad_backend_shared"
-	@echo "... python_tensor"
+	@echo "... ops"
+	@echo "... tensor"
 	@echo "... home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.o"
 	@echo "... home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.i"
 	@echo "... home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/main.s"

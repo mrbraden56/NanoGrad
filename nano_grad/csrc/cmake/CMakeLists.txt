@@ -12,13 +12,15 @@ add_library(${PROJECT_NAME}_shared SHARED $<TARGET_OBJECTS:${PROJECT_NAME}_obj>)
 
 add_subdirectory(${SRC_DIR}/Autograd autograd_build)
 add_subdirectory(${SRC_DIR}/Dispatcher dispatcher_build)
+add_subdirectory(${SRC_DIR}/Ops ops_build)
 add_subdirectory(${SRC_DIR}/Tensor tensor_build)
 
 include_directories(${SRC_DIR}/Dispatcher dispatcher_build)
+include_directories(${SRC_DIR}/Ops ops_build)
 include_directories(${SRC_DIR}/Tensor tensor_build)
 
-target_link_libraries(${PROJECT_NAME} autograd dispatcher python_tensor)
-target_link_libraries(${PROJECT_NAME}_shared autograd dispatcher python_tensor)
+target_link_libraries(${PROJECT_NAME} autograd dispatcher ops tensor)
+target_link_libraries(${PROJECT_NAME}_shared autograd dispatcher ops tensor)
 
 
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)

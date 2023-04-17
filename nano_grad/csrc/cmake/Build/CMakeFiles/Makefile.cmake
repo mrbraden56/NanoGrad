@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/CMakeLists.txt"
   "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/CMakeLists.txt"
+  "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/CMakeLists.txt"
   "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/CMakeLists.txt"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
@@ -48,6 +49,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "autograd_build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "dispatcher_build/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "ops_build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tensor_build/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -58,5 +60,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/nano_grad_backend_shared.dir/DependInfo.cmake"
   "autograd_build/CMakeFiles/autograd.dir/DependInfo.cmake"
   "dispatcher_build/CMakeFiles/dispatcher.dir/DependInfo.cmake"
-  "tensor_build/CMakeFiles/python_tensor.dir/DependInfo.cmake"
+  "ops_build/CMakeFiles/ops.dir/DependInfo.cmake"
+  "tensor_build/CMakeFiles/tensor.dir/DependInfo.cmake"
   )

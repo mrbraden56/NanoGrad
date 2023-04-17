@@ -68,12 +68,14 @@ all: CMakeFiles/nano_grad_backend.dir/all
 all: CMakeFiles/nano_grad_backend_shared.dir/all
 all: autograd_build/all
 all: dispatcher_build/all
+all: ops_build/all
 all: tensor_build/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: autograd_build/preinstall
 preinstall: dispatcher_build/preinstall
+preinstall: ops_build/preinstall
 preinstall: tensor_build/preinstall
 .PHONY : preinstall
 
@@ -83,6 +85,7 @@ clean: CMakeFiles/nano_grad_backend.dir/clean
 clean: CMakeFiles/nano_grad_backend_shared.dir/clean
 clean: autograd_build/clean
 clean: dispatcher_build/clean
+clean: ops_build/clean
 clean: tensor_build/clean
 .PHONY : clean
 
@@ -117,10 +120,25 @@ dispatcher_build/clean: dispatcher_build/CMakeFiles/dispatcher.dir/clean
 .PHONY : dispatcher_build/clean
 
 #=============================================================================
+# Directory level rules for directory ops_build
+
+# Recursive "all" directory target.
+ops_build/all: ops_build/CMakeFiles/ops.dir/all
+.PHONY : ops_build/all
+
+# Recursive "preinstall" directory target.
+ops_build/preinstall:
+.PHONY : ops_build/preinstall
+
+# Recursive "clean" directory target.
+ops_build/clean: ops_build/CMakeFiles/ops.dir/clean
+.PHONY : ops_build/clean
+
+#=============================================================================
 # Directory level rules for directory tensor_build
 
 # Recursive "all" directory target.
-tensor_build/all: tensor_build/CMakeFiles/python_tensor.dir/all
+tensor_build/all: tensor_build/CMakeFiles/tensor.dir/all
 .PHONY : tensor_build/all
 
 # Recursive "preinstall" directory target.
@@ -128,7 +146,7 @@ tensor_build/preinstall:
 .PHONY : tensor_build/preinstall
 
 # Recursive "clean" directory target.
-tensor_build/clean: tensor_build/CMakeFiles/python_tensor.dir/clean
+tensor_build/clean: tensor_build/CMakeFiles/tensor.dir/clean
 .PHONY : tensor_build/clean
 
 #=============================================================================
@@ -161,10 +179,11 @@ CMakeFiles/nano_grad_backend_obj.dir/clean:
 # Target rules for target CMakeFiles/nano_grad_backend.dir
 
 # All Build rule for target.
-CMakeFiles/nano_grad_backend.dir/all: tensor_build/CMakeFiles/python_tensor.dir/all
-CMakeFiles/nano_grad_backend.dir/all: dispatcher_build/CMakeFiles/dispatcher.dir/all
-CMakeFiles/nano_grad_backend.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 CMakeFiles/nano_grad_backend.dir/all: autograd_build/CMakeFiles/autograd.dir/all
+CMakeFiles/nano_grad_backend.dir/all: dispatcher_build/CMakeFiles/dispatcher.dir/all
+CMakeFiles/nano_grad_backend.dir/all: ops_build/CMakeFiles/ops.dir/all
+CMakeFiles/nano_grad_backend.dir/all: tensor_build/CMakeFiles/tensor.dir/all
+CMakeFiles/nano_grad_backend.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend.dir/build.make CMakeFiles/nano_grad_backend.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles --progress-num=5 "Built target nano_grad_backend"
@@ -172,7 +191,7 @@ CMakeFiles/nano_grad_backend.dir/all: autograd_build/CMakeFiles/autograd.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nano_grad_backend.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nano_grad_backend.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 0
 .PHONY : CMakeFiles/nano_grad_backend.dir/rule
@@ -190,10 +209,11 @@ CMakeFiles/nano_grad_backend.dir/clean:
 # Target rules for target CMakeFiles/nano_grad_backend_shared.dir
 
 # All Build rule for target.
-CMakeFiles/nano_grad_backend_shared.dir/all: tensor_build/CMakeFiles/python_tensor.dir/all
-CMakeFiles/nano_grad_backend_shared.dir/all: dispatcher_build/CMakeFiles/dispatcher.dir/all
-CMakeFiles/nano_grad_backend_shared.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 CMakeFiles/nano_grad_backend_shared.dir/all: autograd_build/CMakeFiles/autograd.dir/all
+CMakeFiles/nano_grad_backend_shared.dir/all: dispatcher_build/CMakeFiles/dispatcher.dir/all
+CMakeFiles/nano_grad_backend_shared.dir/all: ops_build/CMakeFiles/ops.dir/all
+CMakeFiles/nano_grad_backend_shared.dir/all: tensor_build/CMakeFiles/tensor.dir/all
+CMakeFiles/nano_grad_backend_shared.dir/all: CMakeFiles/nano_grad_backend_obj.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_shared.dir/build.make CMakeFiles/nano_grad_backend_shared.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nano_grad_backend_shared.dir/build.make CMakeFiles/nano_grad_backend_shared.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles --progress-num=7 "Built target nano_grad_backend_shared"
@@ -201,7 +221,7 @@ CMakeFiles/nano_grad_backend_shared.dir/all: autograd_build/CMakeFiles/autograd.
 
 # Build rule for subdir invocation for target.
 CMakeFiles/nano_grad_backend_shared.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nano_grad_backend_shared.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 0
 .PHONY : CMakeFiles/nano_grad_backend_shared.dir/rule
@@ -268,30 +288,56 @@ dispatcher_build/CMakeFiles/dispatcher.dir/clean:
 .PHONY : dispatcher_build/CMakeFiles/dispatcher.dir/clean
 
 #=============================================================================
-# Target rules for target tensor_build/CMakeFiles/python_tensor.dir
+# Target rules for target ops_build/CMakeFiles/ops.dir
 
 # All Build rule for target.
-tensor_build/CMakeFiles/python_tensor.dir/all:
-	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/depend
-	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles --progress-num=8,9 "Built target python_tensor"
-.PHONY : tensor_build/CMakeFiles/python_tensor.dir/all
+ops_build/CMakeFiles/ops.dir/all:
+	$(MAKE) $(MAKESILENT) -f ops_build/CMakeFiles/ops.dir/build.make ops_build/CMakeFiles/ops.dir/depend
+	$(MAKE) $(MAKESILENT) -f ops_build/CMakeFiles/ops.dir/build.make ops_build/CMakeFiles/ops.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles --progress-num=8,9 "Built target ops"
+.PHONY : ops_build/CMakeFiles/ops.dir/all
 
 # Build rule for subdir invocation for target.
-tensor_build/CMakeFiles/python_tensor.dir/rule: cmake_check_build_system
+ops_build/CMakeFiles/ops.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tensor_build/CMakeFiles/python_tensor.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ops_build/CMakeFiles/ops.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 0
-.PHONY : tensor_build/CMakeFiles/python_tensor.dir/rule
+.PHONY : ops_build/CMakeFiles/ops.dir/rule
 
 # Convenience name for target.
-python_tensor: tensor_build/CMakeFiles/python_tensor.dir/rule
-.PHONY : python_tensor
+ops: ops_build/CMakeFiles/ops.dir/rule
+.PHONY : ops
 
 # clean rule for target.
-tensor_build/CMakeFiles/python_tensor.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/clean
-.PHONY : tensor_build/CMakeFiles/python_tensor.dir/clean
+ops_build/CMakeFiles/ops.dir/clean:
+	$(MAKE) $(MAKESILENT) -f ops_build/CMakeFiles/ops.dir/build.make ops_build/CMakeFiles/ops.dir/clean
+.PHONY : ops_build/CMakeFiles/ops.dir/clean
+
+#=============================================================================
+# Target rules for target tensor_build/CMakeFiles/tensor.dir
+
+# All Build rule for target.
+tensor_build/CMakeFiles/tensor.dir/all:
+	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/depend
+	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles --progress-num=10,11 "Built target tensor"
+.PHONY : tensor_build/CMakeFiles/tensor.dir/all
+
+# Build rule for subdir invocation for target.
+tensor_build/CMakeFiles/tensor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tensor_build/CMakeFiles/tensor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles 0
+.PHONY : tensor_build/CMakeFiles/tensor.dir/rule
+
+# Convenience name for target.
+tensor: tensor_build/CMakeFiles/tensor.dir/rule
+.PHONY : tensor
+
+# clean rule for target.
+tensor_build/CMakeFiles/tensor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/clean
+.PHONY : tensor_build/CMakeFiles/tensor.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

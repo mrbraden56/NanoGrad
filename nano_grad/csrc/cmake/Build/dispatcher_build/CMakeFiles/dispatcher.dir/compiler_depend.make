@@ -367,7 +367,7 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h \
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/ops.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -384,8 +384,30 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/include/c++/11/pstl/execution_defs.h
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/tensor.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_heap.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h
 
+
+/usr/include/c++/11/bits/unordered_map.h:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/unordered_map:
+
+/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/tensor.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
@@ -409,11 +431,13 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
+/usr/include/c++/11/bits/std_function.h:
+
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/c++/11/memory:
 
-/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h:
+/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/ops.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
 
@@ -615,6 +639,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
 
+/usr/include/c++/11/bits/enable_special_members.h:
+
 /usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/python3.10/structseq.h:
@@ -805,6 +831,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
+/usr/include/c++/11/bits/uniform_int_dist.h:
+
 /usr/include/c++/11/bits/basic_ios.h:
 
 /usr/include/python3.10/cpython/pymem.h:
@@ -812,6 +840,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 /usr/include/python3.10/setobject.h:
 
 /usr/include/python3.10/cpython/pytime.h:
+
+/usr/include/c++/11/functional:
 
 /usr/include/linux/errno.h:
 
@@ -852,6 +882,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 /usr/include/endian.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/c++/11/bits/stl_heap.h:
 
 /usr/include/c++/11/bits/std_abs.h:
 
@@ -1005,6 +1037,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 
 /usr/include/x86_64-linux-gnu/asm/types.h:
 
+/usr/include/c++/11/bits/stl_algo.h:
+
 /usr/include/asm-generic/int-ll64.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
@@ -1012,6 +1046,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
 /usr/include/python3.10/namespaceobject.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
 
 /usr/include/x86_64-linux-gnu/bits/statx-generic.h:
 

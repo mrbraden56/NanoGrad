@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Autograd/autograd.h"
-#include "Tensor/python_tensor.h"
+#include "Ops/ops.h"
 #include "Dispatcher/dispatcher.h"
 
 int main() {

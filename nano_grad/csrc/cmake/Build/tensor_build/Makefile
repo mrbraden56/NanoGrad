@@ -117,42 +117,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tensor_build/CMakeFiles/python_tensor.dir/rule:
-	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tensor_build/CMakeFiles/python_tensor.dir/rule
-.PHONY : tensor_build/CMakeFiles/python_tensor.dir/rule
+tensor_build/CMakeFiles/tensor.dir/rule:
+	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tensor_build/CMakeFiles/tensor.dir/rule
+.PHONY : tensor_build/CMakeFiles/tensor.dir/rule
 
 # Convenience name for target.
-python_tensor: tensor_build/CMakeFiles/python_tensor.dir/rule
-.PHONY : python_tensor
+tensor: tensor_build/CMakeFiles/tensor.dir/rule
+.PHONY : tensor
 
 # fast build rule for target.
-python_tensor/fast:
-	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/build
-.PHONY : python_tensor/fast
+tensor/fast:
+	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/build
+.PHONY : tensor/fast
 
-python_tensor.o: python_tensor.cpp.o
-.PHONY : python_tensor.o
+tensor.o: tensor.cpp.o
+.PHONY : tensor.o
 
 # target to build an object file
-python_tensor.cpp.o:
-	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/python_tensor.cpp.o
-.PHONY : python_tensor.cpp.o
+tensor.cpp.o:
+	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/tensor.cpp.o
+.PHONY : tensor.cpp.o
 
-python_tensor.i: python_tensor.cpp.i
-.PHONY : python_tensor.i
+tensor.i: tensor.cpp.i
+.PHONY : tensor.i
 
 # target to preprocess a source file
-python_tensor.cpp.i:
-	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/python_tensor.cpp.i
-.PHONY : python_tensor.cpp.i
+tensor.cpp.i:
+	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/tensor.cpp.i
+.PHONY : tensor.cpp.i
 
-python_tensor.s: python_tensor.cpp.s
-.PHONY : python_tensor.s
+tensor.s: tensor.cpp.s
+.PHONY : tensor.s
 
 # target to generate assembly for a file
-python_tensor.cpp.s:
-	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/python_tensor.dir/build.make tensor_build/CMakeFiles/python_tensor.dir/python_tensor.cpp.s
-.PHONY : python_tensor.cpp.s
+tensor.cpp.s:
+	cd /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build && $(MAKE) $(MAKESILENT) -f tensor_build/CMakeFiles/tensor.dir/build.make tensor_build/CMakeFiles/tensor.dir/tensor.cpp.s
+.PHONY : tensor.cpp.s
 
 # Help Target
 help:
@@ -162,10 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... python_tensor"
-	@echo "... python_tensor.o"
-	@echo "... python_tensor.i"
-	@echo "... python_tensor.s"
+	@echo "... tensor"
+	@echo "... tensor.o"
+	@echo "... tensor.i"
+	@echo "... tensor.s"
 .PHONY : help
 
 

@@ -1,0 +1,181 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "autograd_build",
+					"jsonFile" : "directory-autograd_build-Debug-68d391dd07883e046252.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "dispatcher_build",
+					"jsonFile" : "directory-dispatcher_build-Debug-7bd1672c7586849f0d41.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "ops_build",
+					"jsonFile" : "directory-ops_build-Debug-4a605389c8a04b6d1557.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "tensor_build",
+					"jsonFile" : "directory-tensor_build-Debug-4187cd6523527b73b002.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor",
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "nano_grad_backend",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "autograd::@d111d6c1f864cd532993",
+					"jsonFile" : "target-autograd-Debug-855486d5f926f5b12cd6.json",
+					"name" : "autograd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "dispatcher::@7aa6b5434bec6e0a3f10",
+					"jsonFile" : "target-dispatcher-Debug-3a27b0564f63af2a572f.json",
+					"name" : "dispatcher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nano_grad_backend::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nano_grad_backend-Debug-7420bd772b657056a1c9.json",
+					"name" : "nano_grad_backend",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nano_grad_backend_obj-Debug-bb5c0844ac809bd43e61.json",
+					"name" : "nano_grad_backend_obj",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nano_grad_backend_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nano_grad_backend_shared-Debug-fdae434fc7c62ffb62eb.json",
+					"name" : "nano_grad_backend_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ops::@ec45e97ae3fdd3c67f51",
+					"jsonFile" : "target-ops-Debug-0088048ce701aa332b90.json",
+					"name" : "ops",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tensor::@325571700842716e85d0",
+					"jsonFile" : "target-tensor-Debug-347870fc872fbd576eb2.json",
+					"name" : "tensor",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/bradenlock83/Projects/NanoGrad/build",
+		"source" : "/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

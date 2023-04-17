@@ -1,0 +1,2 @@
+/usr/bin/ar qc libops.a CMakeFiles/ops.dir/ops.cpp.o
+/usr/bin/ranlib libops.a

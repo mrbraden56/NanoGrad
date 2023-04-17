@@ -182,7 +182,7 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Autograd/autograd.h \
-  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h \
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/ops.h \
   /usr/include/python3.10/Python.h \
   /usr/include/python3.10/patchlevel.h \
   /usr/include/python3.10/pyconfig.h \
@@ -386,8 +386,28 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/bits/erase_if.h \
-  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/ops.h \
+  /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/tensor.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_heap.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h
 
+
+/usr/include/c++/11/bits/unordered_map.h:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/unordered_map:
+
+/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/tensor.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
 
@@ -396,6 +416,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/map:
 
 /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
@@ -422,6 +444,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/bits/align.h:
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/11/bits/std_function.h:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
@@ -661,6 +685,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 
 /usr/include/c++/11/bits/ostream.tcc:
 
+/usr/include/c++/11/bits/stl_algo.h:
+
 /usr/include/asm-generic/int-ll64.h:
 
 /usr/include/c++/11/new:
@@ -696,6 +722,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/tr1/special_function_util.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
+
+/usr/include/c++/11/functional:
 
 /usr/include/linux/errno.h:
 
@@ -734,8 +762,6 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/c++/11/bits/stl_function.h:
-
-/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/python_tensor.h:
 
 /usr/include/c++/11/ext/numeric_traits.h:
 
@@ -824,6 +850,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/ops.h:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
@@ -929,6 +957,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 
 /usr/include/python3.10/pyport.h:
 
+/usr/include/c++/11/bits/stl_heap.h:
+
 /usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/c++/11/cstdio:
@@ -987,6 +1017,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
+/usr/include/c++/11/bits/uniform_int_dist.h:
+
 /usr/include/python3.10/setobject.h:
 
 /usr/include/python3.10/cpython/pymem.h:
@@ -1006,6 +1038,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/python3.10/structseq.h:
 
@@ -1156,5 +1190,7 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/linux/types.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
 
 /usr/include/x86_64-linux-gnu/bits/statx-generic.h:

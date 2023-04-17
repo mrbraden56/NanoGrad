@@ -80,7 +80,8 @@ libnano_grad_backend_shared.so: CMakeFiles/nano_grad_backend_obj.dir/home/braden
 libnano_grad_backend_shared.so: CMakeFiles/nano_grad_backend_shared.dir/build.make
 libnano_grad_backend_shared.so: autograd_build/libautograd.a
 libnano_grad_backend_shared.so: dispatcher_build/libdispatcher.a
-libnano_grad_backend_shared.so: tensor_build/libpython_tensor.a
+libnano_grad_backend_shared.so: ops_build/libops.a
+libnano_grad_backend_shared.so: tensor_build/libtensor.a
 libnano_grad_backend_shared.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 libnano_grad_backend_shared.so: CMakeFiles/nano_grad_backend_shared.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX shared library libnano_grad_backend_shared.so"

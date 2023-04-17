@@ -54,6 +54,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/ops_build/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/cmake/Build/tensor_build/cmake_install.cmake")
 endif()
 

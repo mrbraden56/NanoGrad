@@ -4,7 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include "../Tensor/python_tensor.h"
+#include "../Ops/ops.h"
+#include "../Tensor/tensor.h"
 
 
 #ifndef DISPATCHER_H
@@ -13,7 +14,6 @@
 class Dispatcher {
 public:
     Dispatcher(); // constructor
-    void printMessage(); // member function
     double* receive_dot_product(double* x_array, 
                              int* x_shape, 
                              double* y_array, 
@@ -21,7 +21,7 @@ public:
                              int* python_object);
 
 private:
-    std::map<PyObject*, Tensor> instances;
+    std::map<PyObject*, Ops> instances;
 };
 
 #endif

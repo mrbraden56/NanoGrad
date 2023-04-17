@@ -14,7 +14,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/bradenlock83/Projects/NanoGrad/build/autograd_build/CMakeFiles/autograd.dir/DependInfo.cmake"
   "/home/bradenlock83/Projects/NanoGrad/build/dispatcher_build/CMakeFiles/dispatcher.dir/DependInfo.cmake"
-  "/home/bradenlock83/Projects/NanoGrad/build/tensor_build/CMakeFiles/python_tensor.dir/DependInfo.cmake"
+  "/home/bradenlock83/Projects/NanoGrad/build/ops_build/CMakeFiles/ops.dir/DependInfo.cmake"
+  "/home/bradenlock83/Projects/NanoGrad/build/tensor_build/CMakeFiles/tensor.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

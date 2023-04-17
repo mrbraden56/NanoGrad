@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtensor.a CMakeFiles/tensor.dir/tensor.cpp.o
+/usr/bin/ranlib libtensor.a
