@@ -19,6 +19,7 @@ public:
                              double* y_array, 
                              int* y_shape,
                              int* python_object);
+    Tensor* wrap(double* x, int* x_shape);
 
 private:
     std::map<PyObject*, Ops> instances;

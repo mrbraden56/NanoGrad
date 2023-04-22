@@ -9,7 +9,7 @@
 
 class Tensor{
     public:
-        Tensor(double* data, double grad, std::function<void()> _backward, std::vector<Tensor> _prev);
+        Tensor(double* data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev);
         double grad;
         std::function<void()> _backward;
         std::vector<Tensor> _prev;
@@ -18,6 +18,7 @@ class Tensor{
         Tensor operator*(Tensor& other);
 
     private:
+        int* shape;
         double* data;
 
 };
