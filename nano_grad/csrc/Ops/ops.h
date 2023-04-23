@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include "../Tensor/tensor.h"
 
 
 #ifndef OPS_H
@@ -11,7 +12,8 @@
 class Ops {
 public:
     Ops(); // constructor
-    double* dot(double* x_array, int* x_shape, double* y_array, int* y_shape);
+    std::vector<Tensor*> dot(std::vector<Tensor*> x_array, int* x_shape, 
+                             std::vector<Tensor*> y_array, int* y_shape);
 
 
 private:

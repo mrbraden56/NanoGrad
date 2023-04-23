@@ -313,7 +313,7 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/../Tensor/tensor.h \
+ /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/../Ops/../Tensor/tensor.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
@@ -322,4 +322,5 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: \
  /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/uniform_int_dist.h
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/../Tensor/tensor.h

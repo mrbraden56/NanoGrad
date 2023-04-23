@@ -14,12 +14,12 @@
 class Dispatcher {
 public:
     Dispatcher(); // constructor
-    double* receive_dot_product(double* x_array, 
+    std::vector<Tensor*> receive_dot_product(double* x_array, 
                              int* x_shape, 
                              double* y_array, 
                              int* y_shape,
                              int* python_object);
-    Tensor* wrap(double* x, int* x_shape);
+    std::vector<Tensor*> wrap(double* x, int* x_shape);
 
 private:
     std::map<PyObject*, Ops> instances;

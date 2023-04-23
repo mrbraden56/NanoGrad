@@ -10,16 +10,16 @@
 class Tensor{
     public:
         Tensor(double* data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev);
+        int* shape;
+        double* data;
         double grad;
         std::function<void()> _backward;
         std::vector<Tensor> _prev;
 
-        Tensor operator+(Tensor& other);
-        Tensor operator*(Tensor& other);
+        Tensor operator+(const Tensor& other);
+        Tensor operator*(const Tensor& other);
 
     private:
-        int* shape;
-        double* data;
 
 };
 

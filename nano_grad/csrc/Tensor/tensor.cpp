@@ -7,7 +7,7 @@ Tensor::Tensor(double* data, double grad, std::function<void()>& _backward, std:
     this->_prev=_prev;
 }
 
-Tensor Tensor::operator+(Tensor& other){
+Tensor Tensor::operator+(const Tensor& other){
     double* new_data = new double;
     *new_data=*(this->data) + (*other.data);
     double grad=0;
@@ -17,14 +17,14 @@ Tensor Tensor::operator+(Tensor& other){
 
     std::function<void()> _backward = [&]() mutable{
         this->grad =  this->grad + out.grad;
-        other.grad = other.grad + out.grad;
+        const_cast<Tensor&>(other).grad = other.grad + out.grad;
 
     };
     out._backward = _backward;
     return out;
 }
 
-Tensor Tensor::operator*(Tensor& other){
+Tensor Tensor::operator*(const Tensor& other){
     double* new_data = new double;
     *new_data=*(this->data) * (*other.data);
     int grad=0;
@@ -33,7 +33,7 @@ Tensor Tensor::operator*(Tensor& other){
 
     std::function<void()> _backward = [&]() mutable{
         this->grad =  this->grad + (*(other.data) * out.grad);
-        other.grad = other.grad + (*(this->data) * out.grad);
+        const_cast<Tensor&>(other).grad = other.grad + (*(this->data) * out.grad);
     };
     out._backward = _backward;
     return out;
