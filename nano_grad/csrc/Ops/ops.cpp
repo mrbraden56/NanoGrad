@@ -18,10 +18,10 @@ std::vector<Tensor*> Ops::dot(std::vector<Tensor*> x_array, int* x_shape,
             std::vector<Tensor> _prev_empty = std::vector<Tensor>();
             std::function<void()>& _backward = _backward_empty;
             std::vector<Tensor>& _prev = _prev_empty;
+            double* data = new double(0);
             double grad = 0;
-            Tensor *tensor = new Tensor(0, grad, _backward, _prev);
+            Tensor *tensor = new Tensor(data, grad, _backward, _prev);
             z[j + i * N] = tensor;
-            
             for (int k = 0; k < L; k++) {
                 *z[j + i * N] = *z[j + i * N] + (*x_array[k + i * L] * *y_array[j + k * N]);
             }
