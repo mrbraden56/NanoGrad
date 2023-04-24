@@ -3,6 +3,7 @@
 #include <iostream>
 #include <functional>
 #include <vector>
+#include <stdexcept>
 
 #ifndef TENSOR_H
 #define TENSOR_H
@@ -10,6 +11,9 @@
 class Tensor{
     public:
         Tensor(double* data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev);
+        void test_parents(double parent1, double parent2);
+        int depth() const;
+
         int* shape;
         double* data;
         double grad;

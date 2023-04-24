@@ -8,6 +8,7 @@ class Network:
         self.parameters=None
         self.device=None
 
+    #TODO: Should weights be outside of inner_function so that they dont change each time?
     def linear(self, nin, nout):
         def inner_function(x):
             weights = np.random.rand(x.shape[1], nout)

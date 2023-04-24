@@ -30,7 +30,6 @@ class nanopy(CPP):
 
 
 
-#TODO: See if there is anything we can do better in terms of design
 class Matrix:
     def __init__(self, data, shape=None, backend="python") -> None:
         self.data=data

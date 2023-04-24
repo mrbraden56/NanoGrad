@@ -1,4 +1,3 @@
-#TODO Create tests for SGD
 from nano_grad.engine.tensor import Tensor
 
 class SGD:

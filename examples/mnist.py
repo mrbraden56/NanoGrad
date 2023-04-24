@@ -15,11 +15,15 @@ from ctypes import py_object
 class FeedForward(nn.Network):
     def __init__(self) -> None:
         super().__init__(self)
-        self.l1 = self.linear(4, 1)
+        self.l1 = self.linear(4, 16)
+        self.l2 = self.linear(16, 4)
+        self.l3 = self.linear(4, 1)
 
     def forward(self, x):
         x1 = self.l1(x)
-        return x1
+        x2 = self.l2(x1)
+        x3 = self.l3(x2)
+        return x3
 
 
 def main():

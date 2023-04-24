@@ -118,8 +118,6 @@ class TestTensor(unittest.TestCase):
             with self.subTest():
                 self.assertIn(y, children)
 
-    #TODO: Test method for correct topo graph
-
     
 
 if __name__ == '__main__':
