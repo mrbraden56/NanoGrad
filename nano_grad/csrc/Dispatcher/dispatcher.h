@@ -23,6 +23,7 @@ public:
 
 private:
     std::map<PyObject*, Ops> instances;
+    std::vector<Tensor*> _prev_call;
 };
 
 #endif

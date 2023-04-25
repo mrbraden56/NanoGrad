@@ -26,7 +26,7 @@ std::vector<Tensor*> Ops::dot(std::vector<Tensor*> x_array, int* x_shape,
                 // *z[j + i * N] = *z[j + i * N] + (*x_array[k + i * L] * *y_array[j + k * N]);
                 *z[j + i * N] = *x_array[k + i * L] * *y_array[j + k * N];
                 z[j + i * N]->test_parents(*x_array[k + i * L]->data, *y_array[j + k * N]->data);
-                // std::cout<<z[j + i * N]->depth()<<"\n";
+                std::cout<<z[j + i * N]->depth()<<"\n";
 
                 // for (int idx = 0; idx < z[j + i * N]->_prev.size(); idx++) {
                 //     std::cout << "z[" << j + i * N << "]->_prev[" << idx << "]: " << *z[j + i * N]->_prev[idx].data << "\n";
