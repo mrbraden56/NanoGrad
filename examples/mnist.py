@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[1]))
 from nano_grad.engine.matrix import Matrix
+from nano_grad.engine.tensor import Tensor
 from nano_grad.nn import nn
 from nano_grad.nn.optimizer import SGD
 from nano_grad.nn.loss import MSE
@@ -15,9 +16,9 @@ from ctypes import py_object
 class FeedForward(nn.Network):
     def __init__(self) -> None:
         super().__init__(self)
-        self.l1 = self.linear(4, 16)
-        self.l2 = self.linear(16, 4)
-        self.l3 = self.linear(4, 1)
+        self.l1 = self.linear(4, 128)
+        self.l2 = self.linear(128, 128)
+        self.l3 = self.linear(128, 1)
 
     def forward(self, x):
         x1 = self.l1(x)
@@ -28,10 +29,10 @@ class FeedForward(nn.Network):
 
 def main():
     nn=FeedForward()
-    x=np.random.rand(4, 3)
+    x=Tensor.array(np.random.rand(4, 3))
     y=np.array([1, -1, 1, 1])
     ypred=nn.forward(x)
-    print(ypred)
+    print(ypred.shape)
 
 
     # data=pd.read_csv('C:/Users/brade/Research/nano_grad/examples/data/train.csv')

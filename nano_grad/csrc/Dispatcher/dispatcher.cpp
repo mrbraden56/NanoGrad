@@ -1,5 +1,7 @@
 #include "dispatcher.h"
 
+static Dispatcher dispatcher;
+
 Dispatcher::Dispatcher(){
     // constructor implementation
 }
@@ -32,7 +34,6 @@ std::vector<Tensor*> Dispatcher::receive_dot_product(double* x_array, int* x_sha
     //No instance, firstmake forward pass
     if(this->instances.find(instance)==this->instances.end()){
         x_array_tensor = this->wrap(x_array, x_shape);
-        //TODO: Change Ops() to type Tensor
         instances.insert(std::make_pair(instance, Ops()));
         output = instances[instance].dot(x_array_tensor, x_shape, y_array_tensor, y_shape);
         this->_prev_call = output;
@@ -48,9 +49,10 @@ std::vector<Tensor*> Dispatcher::receive_dot_product(double* x_array, int* x_sha
 }
 
 extern "C" double* call_receive_dot_product(double* x_array, int* x_shape, double* y_array, int* y_shape, int* python_object) {
-    static Dispatcher dispatcher;
     std::vector<Tensor*> result = dispatcher.receive_dot_product(x_array, x_shape, y_array, y_shape, python_object);
-    
+    PyObject* instance = reinterpret_cast<PyObject*>(*python_object);
+    dispatcher_instances.insert(std::make_pair(instance, dispatcher));
+
     int M = x_shape[0];
     int N = y_shape[1];
     int size = M * N;
@@ -61,4 +63,15 @@ extern "C" double* call_receive_dot_product(double* x_array, int* x_shape, doubl
     }
     
     return output_data;
+}
+
+//TODO: Figure out how we should structure 'parameters' for interaction between Python and C++
+extern "C" void parameters(int* python_object) {
+    PyObject* instance = reinterpret_cast<PyObject*>(*python_object);
+    Dispatcher dispatcher = dispatcher_instances[instance];
+    // std::vector<Tensor*> result = dispatcher.receive_dot_product(x_array, x_shape, y_array, y_shape, python_object);
+    
+
+    
+    // return output_data;
 }

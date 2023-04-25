@@ -305,4 +305,8 @@ tensor_build/CMakeFiles/tensor.dir/tensor.cpp.o: \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/uniform_int_dist.h
+ /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/set \
+ /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h

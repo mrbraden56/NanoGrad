@@ -397,8 +397,17 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/set \
+  /usr/include/c++/11/bits/stl_set.h \
+  /usr/include/c++/11/bits/stl_multiset.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Tensor/tensor.h
 
+
+/usr/include/c++/11/algorithm:
+
+/usr/include/c++/11/set:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -465,6 +474,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/11/stdexcept:
 
@@ -553,6 +564,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 /usr/include/python3.10/import.h:
 
 /usr/include/python3.10/intrcheck.h:
+
+/usr/include/c++/11/bits/stl_multiset.h:
 
 /usr/include/python3.10/osmodule.h:
 
@@ -669,6 +682,8 @@ dispatcher_build/CMakeFiles/dispatcher.dir/dispatcher.cpp.o: /home/bradenlock83/
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/c++/11/bits/stl_set.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 

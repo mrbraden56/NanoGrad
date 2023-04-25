@@ -69,3 +69,26 @@ Tensor Tensor::operator*(const Tensor& other){
     out._backward = _backward;
     return out;
 }
+
+void Tensor::backwards() {
+    std::vector<Tensor*> topo;
+    std::set<Tensor*> visited;
+
+    std::function<void(Tensor*)> build_topo = [&](Tensor* v) {
+        if (visited.find(v) == visited.end()) {
+            visited.insert(v);
+            for (Tensor& child : v->_prev) {
+                build_topo(&child);
+            }
+            topo.push_back(v);
+        }
+    };
+
+    build_topo(this);
+    this->grad = 1.0;
+
+    for (auto it = topo.rbegin(); it != topo.rend(); ++it) {
+        Tensor* tensor = *it;
+        tensor->_backward();
+    }
+}

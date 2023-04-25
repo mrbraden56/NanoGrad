@@ -43,5 +43,17 @@ class CPP:
         
         result_array = as_array(pointer, shape=(x.shape[0], y.shape[1]))
         return result_array
+    
+    def _parameters(self, instance, device):
+        instance_py_object=ctypes.py_object(instance)
+        
+        instance_address=int(hex(id(instance)), 16)
+        c_type_instance_address=ctypes.c_int(instance_address)
+
+        self.dispatcher_lib.parameters.restype = ctypes.POINTER(ctypes.c_double)
+
+        parameters = self.dispatcher_lib.parameters(ctypes.byref(c_type_instance_address))
+
+        return 1
                                                             
 

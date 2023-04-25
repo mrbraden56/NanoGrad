@@ -393,9 +393,14 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/set \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_set.h \
+  /usr/include/c++/11/bits/stl_multiset.h \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h \
   /usr/include/c++/11/map \
-  /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Ops/ops.h \
@@ -410,6 +415,10 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/map:
 
 /home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/dispatcher.h:
+
+/usr/include/c++/11/algorithm:
+
+/usr/include/c++/11/set:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -474,6 +483,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/python3.10/cpython/import.h:
 
 /usr/include/python3.10/intrcheck.h:
+
+/usr/include/c++/11/bits/stl_multiset.h:
 
 /usr/include/python3.10/osmodule.h:
 
@@ -590,6 +601,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/c++/11/bits/stl_set.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
@@ -1014,6 +1027,8 @@ CMakeFiles/nano_grad_backend_obj.dir/home/bradenlock83/Projects/NanoGrad/nano_gr
 /usr/include/c++/11/ios:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
+
+/usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/11/stdexcept:
 
