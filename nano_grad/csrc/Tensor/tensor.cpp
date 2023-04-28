@@ -1,6 +1,6 @@
 #include "tensor.h"
 
-Tensor::Tensor(double* data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev){
+Tensor::Tensor(std::shared_ptr<double> data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev){
     this->data=data;
     this->grad=grad;
     this->_backward=_backward;
@@ -38,7 +38,7 @@ int Tensor::depth() const{
 }
 
 Tensor Tensor::operator+(const Tensor& other){
-    double* new_data = new double;
+    std::shared_ptr<double> new_data = std::make_shared<double>(0);
     *new_data=*(this->data) + (*other.data);
     double grad=0;
     std::vector<Tensor> _prev{ *this, other };
@@ -55,7 +55,7 @@ Tensor Tensor::operator+(const Tensor& other){
 }
 
 Tensor Tensor::operator*(const Tensor& other){
-    double* new_data = new double;
+    std::shared_ptr<double> new_data = std::make_shared<double>(0);
     *new_data=*(this->data) * (*other.data);
     int grad=0;
     std::vector<Tensor> _prev{ *this, other };

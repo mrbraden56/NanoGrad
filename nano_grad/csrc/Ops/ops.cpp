@@ -4,13 +4,13 @@ Ops::Ops(){
     // constructor implementation
 }
 
-std::vector<Tensor*> Ops::dot(std::vector<Tensor*> x_array, int* x_shape, 
-                              std::vector<Tensor*> y_array, int* y_shape){
+std::vector<std::shared_ptr<Tensor>> Ops::dot(std::vector<std::shared_ptr<Tensor>> x_array, int* x_shape, 
+                              std::vector<std::shared_ptr<Tensor>> y_array, int* y_shape){
     int M = x_shape[0];
     int L = x_shape[1]; // Same as y_shape[0]
     int N = y_shape[1];
     
-    std::vector<Tensor*> z(M * N);
+    std::vector<std::shared_ptr<Tensor>> z(M * N);
     
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++) {
@@ -18,9 +18,9 @@ std::vector<Tensor*> Ops::dot(std::vector<Tensor*> x_array, int* x_shape,
             std::vector<Tensor> _prev_empty = std::vector<Tensor>();
             std::function<void()>& _backward = _backward_empty;
             std::vector<Tensor>& _prev = _prev_empty;
-            double* data = new double(0);
+            std::shared_ptr<double> data = std::make_shared<double>(0);
             double grad = 0;
-            Tensor *tensor = new Tensor(data, grad, _backward, _prev);
+            std::shared_ptr<Tensor> tensor = std::make_shared<Tensor>(data, grad, _backward, _prev);
             z[j + i * N] = tensor;
             for (int k = 0; k < L; k++) {
                 // *z[j + i * N] = *z[j + i * N] + (*x_array[k + i * L] * *y_array[j + k * N]);

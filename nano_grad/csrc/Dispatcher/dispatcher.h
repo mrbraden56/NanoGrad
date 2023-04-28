@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <string.h>
 #include <iostream>
-#include <iostream>
+#include <memory>
 #include <vector>
 #include <map>
 #include "../Ops/ops.h"
@@ -14,17 +14,17 @@
 class Dispatcher {
 public:
     Dispatcher(); // constructor
-    std::vector<Tensor*> receive_dot_product(double* x_array, 
-                             int* x_shape, 
-                             double* y_array, 
-                             int* y_shape,
-                             int* python_object);
-    std::vector<Tensor*> wrap(double* x, int* x_shape);
+    std::vector<std::shared_ptr<Tensor>> receive_dot_product(std::shared_ptr<double> x_array, 
+                                                            int* x_shape, 
+                                                            std::shared_ptr<double> y_array, 
+                                                            int* y_shape,
+                                                            std::unique_ptr<int>& python_object);
+    std::vector<std::shared_ptr<Tensor>> wrap(std::shared_ptr<double> x, int* x_shape);
 
 private:
     std::map<PyObject*, Ops> instances;
     std::map<PyObject*, Dispatcher> dispatcher_instances;
-    std::vector<Tensor*> _prev_call;
+    std::vector<std::shared_ptr<Tensor>> _prev_call;
 };
 
 #endif

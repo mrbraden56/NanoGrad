@@ -12,8 +12,8 @@
 class Ops {
 public:
     Ops(); // constructor
-    std::vector<Tensor*> dot(std::vector<Tensor*> x_array, int* x_shape, 
-                             std::vector<Tensor*> y_array, int* y_shape);
+    std::vector<std::shared_ptr<Tensor>> dot(std::vector<std::shared_ptr<Tensor>> x_array, int* x_shape, 
+                             std::vector<std::shared_ptr<Tensor>> y_array, int* y_shape);
 
 
 private:

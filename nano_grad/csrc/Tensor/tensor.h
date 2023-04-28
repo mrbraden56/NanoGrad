@@ -6,19 +6,20 @@
 #include <set>
 #include <stdexcept>
 #include <algorithm>
+#include <memory>
 
 #ifndef TENSOR_H
 #define TENSOR_H
 
 class Tensor{
     public:
-        Tensor(double* data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev);
+        Tensor(std::shared_ptr<double> data, double grad, std::function<void()>& _backward, std::vector<Tensor>& _prev);
         void test_parents(double parent1, double parent2);
         int depth() const;
         void backwards();
 
         int* shape;
-        double* data;
+        std::shared_ptr<double> data;
         double grad;
         std::function<void()> _backward;
         std::vector<Tensor> _prev;
