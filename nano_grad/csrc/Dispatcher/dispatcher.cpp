@@ -45,15 +45,14 @@ std::vector<std::shared_ptr<Tensor>> Dispatcher::receive_dot_product(std::shared
         output = instances[instance].dot(x_array_tensor, x_shape, y_array_tensor, y_shape);//here
         this->_prev_call = output;
     }
-    
     return output;
 }
 
-extern "C" double* call_receive_dot_product(double* x_array, 
-                                             int* x_shape, 
-                                             double* y_array, 
-                                             int* y_shape, 
-                                             int* python_object) {
+extern "C" double* call_receive_dot_product(double* x_array,
+                                           int* x_shape,
+                                           double* y_array,
+                                           int* y_shape,
+                                           int* python_object) {
     static Dispatcher dispatcher;
     std::shared_ptr<double> x_array_ptr(x_array);
     std::shared_ptr<double> y_array_ptr(y_array);
@@ -61,16 +60,17 @@ extern "C" double* call_receive_dot_product(double* x_array,
     std::vector<std::shared_ptr<Tensor>> result = dispatcher.receive_dot_product(
         x_array_ptr, x_shape, y_array_ptr, y_shape, python_object_ptr);
     PyObject* instance = reinterpret_cast<PyObject*>(*python_object_ptr);
-    // dispatcher_instances.insert(std::make_pair(instance, dispatcher));
     int M = x_shape[0];
     int N = y_shape[1];
     int size = M * N;
-    auto output_data = std::make_unique<double[]>(size);
+    double* output_data = new double[size];
     for (int i = 0; i < size; i++) {
-        output_data[i] = *result[i]->data;
+        // Make a deep copy of the data instead of copying the pointer
+        output_data[i] = result[i]->data.get()[0];
     }
-    return output_data.release();
+    return output_data;
 }
+
 
 
 //TODO: Figure out how we should structure 'parameters' for interaction between Python and C++
