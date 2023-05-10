@@ -25,8 +25,7 @@ std::vector<std::shared_ptr<Tensor>> Dispatcher::wrap(std::shared_ptr<double> x,
 
 std::vector<std::shared_ptr<Tensor>> Dispatcher::receive_dot_product(std::shared_ptr<double> x_array, int* x_shape, 
                                                      std::shared_ptr<double> y_array, int* y_shape, 
-                                                     std::unique_ptr<int>& python_object){
-    PyObject* instance = reinterpret_cast<PyObject*>(*python_object);
+                                                     PyObject* instance){
     std::vector<std::shared_ptr<Tensor>> output;
 
     std::vector<std::shared_ptr<Tensor>> x_array_tensor;
@@ -48,30 +47,27 @@ std::vector<std::shared_ptr<Tensor>> Dispatcher::receive_dot_product(std::shared
     return output;
 }
 
-//TODO: Error seems to be happening with the smart pointers and not the call to python
-//I am thinking that it has to do with the variables passed by Python. We are putting this variables into
-//smart pointers. The problem is that Python is trying to deallocate those variables alongside the smart pointers
-//and I think that is what is casuing the free access error or whatever
+
 extern "C" double* call_receive_dot_product(double* x_array,
                                            int* x_shape,
                                            double* y_array,
                                            int* y_shape,
                                            int* python_object) {
     static Dispatcher dispatcher;
-    // std::shared_ptr<double> x_array_ptr(x_array, [](double*){});
-    // std::shared_ptr<double> y_array_ptr(y_array, [](double*){});
-    std::unique_ptr<int> python_object_ptr(python_object);
-    // std::vector<std::shared_ptr<Tensor>> result = dispatcher.receive_dot_product(
-    //     x_array_ptr, x_shape, y_array_ptr, y_shape, python_object_ptr);
-    // PyObject* instance = reinterpret_cast<PyObject*>(*python_object_ptr);
+    std::shared_ptr<double> x_array_ptr(x_array, [](double*){});
+    std::shared_ptr<double> y_array_ptr(y_array, [](double*){});
+    int* python_object_ptr(python_object);
+    PyObject* instance = reinterpret_cast<PyObject*>(*python_object_ptr);
+    std::vector<std::shared_ptr<Tensor>> result = dispatcher.receive_dot_product(
+        x_array_ptr, x_shape, y_array_ptr, y_shape, instance);
     int M = x_shape[0];
     int N = y_shape[1];
     int size = M * N;
     double* output_data = new double[size];
     for (int i = 0; i < size; i++) {
         // Make a deep copy of the data instead of copying the pointer
-        // output_data[i] = result[i]->data.get()[0];
-        output_data[i] = 0.0;
+        output_data[i] = result[i]->data.get()[0];
+        // output_data[i] = 0.0;
     }
     return output_data;
 }

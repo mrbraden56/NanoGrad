@@ -18,7 +18,7 @@ public:
                                                             int* x_shape, 
                                                             std::shared_ptr<double> y_array, 
                                                             int* y_shape,
-                                                            std::unique_ptr<int>& python_object);
+                                                            PyObject* instance);
     std::vector<std::shared_ptr<Tensor>> wrap(std::shared_ptr<double> x, int* x_shape);
 
 private:
