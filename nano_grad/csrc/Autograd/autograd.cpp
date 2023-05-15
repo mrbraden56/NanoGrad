@@ -1,4 +1,3 @@
-//TODO: Seperate file for autograd incase we want to optimize
 #include "autograd.h"
 
 double add(double a, double b)

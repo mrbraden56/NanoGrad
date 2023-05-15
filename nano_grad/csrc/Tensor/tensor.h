@@ -23,6 +23,7 @@ class Tensor{
         double grad;
         std::function<void()> _backward;
         std::vector<Tensor> _prev;
+        std::vector<std::vector<Tensor>> parameters;
 
         Tensor operator+(const Tensor& other);
         Tensor operator*(const Tensor& other);

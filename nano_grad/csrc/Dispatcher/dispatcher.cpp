@@ -1,4 +1,9 @@
 #include "dispatcher.h"
+//TODO: Rewrite logic of responsbility between Python and C++
+//Right now half of the logic is Python and half is C++. We need to create
+//this program in a way where there is a greater seperation of logic/responsibility
+//between Python and C++. So I think we should rewrite it in a way where Python is 
+//ONLY used for the front end and everything else takes places in C++
 
 Dispatcher::Dispatcher(){
     // constructor implementation
@@ -74,13 +79,8 @@ extern "C" double* call_receive_dot_product(double* x_array,
 
 
 
-//TODO: Figure out how we should structure 'parameters' for interaction between Python and C++
-// extern "C" void parameters(int* python_object) {
+// extern "C" void call_zero_grad(int* python_object) {
 //     PyObject* instance = reinterpret_cast<PyObject*>(*python_object);
 //     Dispatcher dispatcher = dispatcher_instances[instance];
-    // std::vector<Tensor*> result = dispatcher.receive_dot_product(x_array, x_shape, y_array, y_shape, python_object);
-    
-
-    
-    // return output_data;
+//     dispatcher.zero_grad(x_array, x_shape, y_array, y_shape, python_object);
 // }

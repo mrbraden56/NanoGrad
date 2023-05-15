@@ -180,7 +180,6 @@ class Matrix:
         if len(x.shape)==2:
             for i in range(x.shape[0]):
                 for j in range(x.shape[1]):
-                    #TODO: Do I have to track 1 / y[i][j]? 
                     result[i][j]=x[i][j] * (1 / y[i][j])
         else:
             for i in range(x.shape[0]):

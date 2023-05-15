@@ -3,6 +3,8 @@ from ctypes import py_object
 import numpy as np
 from numpy.ctypeslib import ndpointer
 from numpy.ctypeslib import as_array
+from typing import List
+
 
 
 
@@ -55,5 +57,11 @@ class CPP:
         parameters = self.dispatcher_lib.parameters(ctypes.byref(c_type_instance_address))
 
         return 1
+    
+    def _step(self, params: List[np.ndarray], lr):
+        print(params)
+
+    def _zero_grad(self, params: List[np.ndarray]):
+        print(params)
                                                             
 

@@ -132,7 +132,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "nano_grad_backend::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-nano_grad_backend-Debug-d4f519e9d6b57f6a0a74.json",
+					"jsonFile" : "target-nano_grad_backend-Debug-7b79541d1cbd7bd90064.json",
 					"name" : "nano_grad_backend",
 					"projectIndex" : 0
 				},
@@ -146,7 +146,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "nano_grad_backend_shared::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-nano_grad_backend_shared-Debug-44b5ef996f77a8773cee.json",
+					"jsonFile" : "target-nano_grad_backend_shared-Debug-d0ea7ef1949b0f3e139a.json",
 					"name" : "nano_grad_backend_shared",
 					"projectIndex" : 0
 				},
@@ -176,6 +176,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 5
 	}
 }

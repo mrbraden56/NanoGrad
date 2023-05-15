@@ -19,6 +19,9 @@ public:
                                                             std::shared_ptr<double> y_array, 
                                                             int* y_shape,
                                                             PyObject* instance);
+
+    void zero_grad();
+
     std::vector<std::shared_ptr<Tensor>> wrap(std::shared_ptr<double> x, int* x_shape);
 
 private:

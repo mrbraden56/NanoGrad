@@ -12,6 +12,8 @@ import pandas as pd
 import numpy as np
 import ctypes
 from ctypes import py_object
+from typing import List
+
 
 class FeedForward(nn.Network):
     def __init__(self) -> None:
@@ -25,6 +27,9 @@ class FeedForward(nn.Network):
         x2 = self.l2(x1)
         x3 = self.l3(x2)
         return x3
+    
+    def parameters(self) -> List[np.ndarray]:
+        return super().parameters()
 
 
 def main():
@@ -33,6 +38,9 @@ def main():
     y=np.array([1, -1, 1, 1])
     ypred=nn.forward(x)
     print(ypred.shape)
+    print(nn.parameters()[1].shape)
+    optimizer=SGD(params=nn.parameters(), lr=0.1)
+    optimizer.zero_grad()
 
 
     # data=pd.read_csv('C:/Users/brade/Research/nano_grad/examples/data/train.csv')
@@ -64,7 +72,6 @@ def main():
     # ])
     # ytarget=Matrix.array([1.0, -1.0, 1.0, 1.0])
     # nn=FeedForward()
-    # optimizer=SGD(params=nn.parameters(), lr=0.1)
     # for i in range(1000):
     #     ypred=nn.forward(x)
     #     ypred=Matrix.squeeze(ypred, 1)

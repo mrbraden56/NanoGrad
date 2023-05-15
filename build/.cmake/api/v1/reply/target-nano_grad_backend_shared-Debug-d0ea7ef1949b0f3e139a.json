@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "nano_grad_backend"
+			"path" : "libnano_grad_backend_shared.so"
 		}
 	],
 	"backtrace" : 1,
@@ -10,14 +10,14 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
+			"add_library",
 			"target_link_libraries",
-			"include_directories",
-			"target_include_directories"
+			"include_directories"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"CMakeLists.txt",
+			"/home/bradenlock83/Projects/NanoGrad/nano_grad/csrc/Dispatcher/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -27,20 +27,23 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 22,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
+				"file" : 1
+			},
+			{
 				"command" : 1,
-				"file" : 0,
-				"line" : 29,
-				"parent" : 0
+				"file" : 1,
+				"line" : 9,
+				"parent" : 3
 			},
 			{
 				"command" : 2,
@@ -59,18 +62,6 @@
 				"file" : 0,
 				"line" : 20,
 				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 0,
-				"line" : 28,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 0,
-				"line" : 33,
-				"parent" : 0
 			}
 		]
 	},
@@ -78,10 +69,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "tensor::@325571700842716e85d0"
+			"id" : "autograd::@d111d6c1f864cd532993"
 		},
 		{
-			"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df"
+			"backtrace" : 2,
+			"id" : "tensor::@325571700842716e85d0"
 		},
 		{
 			"backtrace" : 2,
@@ -92,19 +84,14 @@
 			"id" : "dispatcher::@7aa6b5434bec6e0a3f10"
 		},
 		{
-			"backtrace" : 2,
-			"id" : "autograd::@d111d6c1f864cd532993"
+			"id" : "nano_grad_backend_obj::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "nano_grad_backend::@6890427a1f51a3e7e1df",
+	"id" : "nano_grad_backend_shared::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -130,15 +117,15 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 4,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libpython3.10.so",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "nano_grad_backend",
-	"nameOnDisk" : "nano_grad_backend",
+	"name" : "nano_grad_backend_shared",
+	"nameOnDisk" : "libnano_grad_backend_shared.so",
 	"paths" : 
 	{
 		"build" : ".",
@@ -163,5 +150,5 @@
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "SHARED_LIBRARY"
 }
