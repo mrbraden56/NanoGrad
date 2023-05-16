@@ -25,6 +25,9 @@ class nanopy(CPP):
     def parameters(cls, network_instance=None, device="cpu"):
         return cls()._parameters(network_instance, device)
 
+    @classmethod
+    def initialize(cls):
+        return cls()._initialize()
 
 
 

@@ -12,7 +12,6 @@ class CPP:
     def __init__(self)->None:
         self.dispatcher_lib = ctypes.CDLL('../nano_grad/csrc/cmake/Build/libnano_grad_backend_shared.so')
 
-    #test
     def _dot(self, x: np.ndarray, y: np.ndarray, instance, device):
         x_pointer=x.ctypes.data_as(ctypes.POINTER(ctypes.c_double))
         shape_list = [x.shape[0], x.shape[1]]
@@ -63,5 +62,10 @@ class CPP:
 
     def _zero_grad(self, params: List[np.ndarray]):
         print(params)
+
+    def _initialize(self):
+        instance_py_object=ctypes.py_object(instance)
+        instance_address=int(hex(id(instance)), 16)
+        c_type_instance_address=ctypes.c_int(instance_address)
                                                             
 

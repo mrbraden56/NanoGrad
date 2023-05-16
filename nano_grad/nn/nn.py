@@ -10,14 +10,16 @@ class Network:
         self.network_instance=network_instance
         self.weights: List[np.ndarray] = []
         self.device=None
+        self.c_pointer = nanopy.initialize()
 
-    #TODO: Should weights be outside of inner_function so that they dont change each time?
+
+
     def linear(self, nin, nout):
         weight = np.random.rand(nin, nout)
         self.weights.append(weight)
-        def inner_function(x: Tensor):
+        def _linear(x: Tensor):
             return Tensor.array(nanopy.dot(x.data, weight, self.network_instance))  # + self.bias
-        return inner_function
+        return _linear
 
     def parameters(self):
         return self.weights
